@@ -1,0 +1,18 @@
+{
+    "home_page_menu_home": "Home",
+    "home_page_menu_about": "About",
+    "home_page_menu_contact": "Contact",
+    "home_page_menu_location": "Location",
+    "home_page_resume": "Resume",
+    "home_page_title_1": "Hi, I am",
+    "home_page_title_2": "Paul Realpe",
+    "home_page_title_3": "Software Developer",
+    "home_page_professional_profile": "Systems engineer with more than 4 years of professional experience in Web and Mobile Development. Extensive knowledge in Flutter Framework and Dart programming language. Solid knowledge in development technologies such as HTML, CSS, JavaScript, ReactJS, AngularJS, Redux, Python, Flask and Firebase.",
+    "home_page_explore_button": "  Read more  ",
+    "home_page_whatsapp_button": "WhatsApp",
+    "about_page_who_i_am": "Who am I?",
+    "about_page_who_i_am_body": "Who am I?",
+    "about_page_what_i_do": "What I do?",
+    "contact_page_team_colaborators": "Team colaborators",
+    "contact_page_work_together": "Let's work together"
+}
