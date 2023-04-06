@@ -1,7 +1,6 @@
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
 import 'package:devpaul_co/presentation/shared/custom_button.dart';
-import 'package:devpaul_co/presentation/shared/dev_paul_horizontal_logo.dart';
 import 'package:devpaul_co/presentation/shared/tech_stack_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -45,7 +44,6 @@ class HomeViewSm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const DevPaulHorizontalLogo(),
                   const Spacer(),
                   Text(AppLocalizations.of(context)!.home_page_title_1,
                       style: getTextStyle()),

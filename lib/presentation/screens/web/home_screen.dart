@@ -78,7 +78,7 @@ class _HomeBody extends StatelessWidget {
           ),
           constraints.maxWidth > 900
               ? const SizedBox()
-              : const Positioned(right: 26, top: 26, child: CustomAppMenu()),
+              : const Positioned(top: 0, child: CustomAppMenu()),
         ],
       );
     });

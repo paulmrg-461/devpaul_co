@@ -55,8 +55,10 @@ class MobileMenuItem extends StatefulWidget {
     required this.text,
     required this.onPressed,
     required this.icon,
+    required this.delay,
   }) : super(key: key);
   final String text;
+  final int delay;
   final IconData icon;
   final Function onPressed;
   @override
@@ -68,8 +70,9 @@ class MobileMenuItemState extends State<MobileMenuItem> {
 
   @override
   Widget build(BuildContext context) {
-    return FadeIn(
-      duration: const Duration(milliseconds: 2000),
+    return BounceInLeft(
+      duration: const Duration(milliseconds: 1200),
+      delay: Duration(milliseconds: widget.delay),
       child: MouseRegion(
         onEnter: (_) => setState(() {
           isHover = true;
@@ -80,21 +83,22 @@ class MobileMenuItemState extends State<MobileMenuItem> {
         child: InkWell(
           onTap: () => widget.onPressed(),
           child: Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 16),
             child: Row(
               children: [
                 Icon(
                   widget.icon,
                   color: Colors.white70,
+                  size: 34,
                 ),
                 const SizedBox(
-                  width: 16,
+                  width: 22,
                 ),
                 Text(
                   widget.text,
                   style: GoogleFonts.inter(
                       color: isHover ? const Color(0xffAD54C2) : Colors.white,
-                      fontSize: 20,
+                      fontSize: 24,
                       fontWeight: FontWeight.w300),
                 ),
               ],

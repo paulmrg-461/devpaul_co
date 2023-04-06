@@ -1,3 +1,4 @@
+import 'package:devpaul_co/presentation/shared/dev_paul_horizontal_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
     with SingleTickerProviderStateMixin {
   bool isOpen = false;
   late AnimationController controller;
+  int delay = 30;
 
   @override
   void initState() {
@@ -62,6 +64,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
                           'https://drive.google.com/file/d/1jAPgDvxwXu2IE-Gcje66cQ8SGfgz1lmf/view?usp=sharing'))
                       : pageProvider.goTo(item.key),
                   icon: icons[item.key],
+                  delay: (delay * (item.key * 4)),
                 ),
               ],
             ))
@@ -74,20 +77,16 @@ class _CustomAppMenuState extends State<CustomAppMenu>
         isOpen = !isOpen;
       }),
       child: Container(
-        width: isOpen ? size.width * 0.5 : null,
-        height: isOpen ? size.height * 0.4 : null,
-        decoration: BoxDecoration(
-            color: const Color(0xff443357),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: Colors.white),
-            gradient: const RadialGradient(
+        width: size.width,
+        height: isOpen ? size.height * 0.5 : null,
+        decoration: const BoxDecoration(
+            color: Color(0xff443357),
+            gradient: RadialGradient(
               center: Alignment.bottomLeft,
               radius: 1,
               colors: [Color(0xff443357), Color(0xff1F2631)],
             )),
-        padding: isOpen
-            ? const EdgeInsets.symmetric(vertical: 14, horizontal: 32)
-            : const EdgeInsets.all(14),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 26),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -116,13 +115,20 @@ class _MenuTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        isOpen ? const Spacer() : const SizedBox(),
-        AnimatedIcon(
-          icon: AnimatedIcons.menu_close,
-          progress: controller,
-          size: 32,
-          color: Colors.white,
+        const DevPaulHorizontalLogo(),
+        Container(
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.white)),
+          child: AnimatedIcon(
+            icon: AnimatedIcons.menu_close,
+            progress: controller,
+            size: 32,
+            color: Colors.white,
+          ),
         ),
       ],
     );
