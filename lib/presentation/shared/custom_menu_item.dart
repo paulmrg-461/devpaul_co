@@ -48,3 +48,60 @@ class _CustomMenuItemState extends State<CustomMenuItem> {
     );
   }
 }
+
+class MobileMenuItem extends StatefulWidget {
+  const MobileMenuItem({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+    required this.icon,
+  }) : super(key: key);
+  final String text;
+  final IconData icon;
+  final Function onPressed;
+  @override
+  State<MobileMenuItem> createState() => MobileMenuItemState();
+}
+
+class MobileMenuItemState extends State<MobileMenuItem> {
+  bool isHover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeIn(
+      duration: const Duration(milliseconds: 2000),
+      child: MouseRegion(
+        onEnter: (_) => setState(() {
+          isHover = true;
+        }),
+        onExit: (_) => setState(() {
+          isHover = false;
+        }),
+        child: InkWell(
+          onTap: () => widget.onPressed(),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
+              children: [
+                Icon(
+                  widget.icon,
+                  color: Colors.white70,
+                ),
+                const SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  widget.text,
+                  style: GoogleFonts.inter(
+                      color: isHover ? const Color(0xffAD54C2) : Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

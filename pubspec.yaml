@@ -37,6 +37,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^2.0.4
+  font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.3
   google_maps: ^6.2.0
   intl: any

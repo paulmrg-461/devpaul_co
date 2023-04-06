@@ -1,12 +1,11 @@
-import 'package:devpaul_co/core/helpers/clip_paths/background_home_clippath.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
 import 'package:devpaul_co/presentation/shared/custom_button.dart';
-import 'package:devpaul_co/presentation/shared/custom_menu_item.dart';
 import 'package:devpaul_co/presentation/shared/dev_paul_horizontal_logo.dart';
 import 'package:devpaul_co/presentation/shared/tech_stack_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -34,7 +33,7 @@ class HomeViewSm extends StatelessWidget {
         children: [
           Stack(children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 26),
+              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 32),
               decoration: const BoxDecoration(
                   gradient: RadialGradient(
                 center: Alignment.bottomLeft,
@@ -46,17 +45,7 @@ class HomeViewSm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const DevPaulHorizontalLogo(),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        color: Colors.white,
-                      )
-                    ],
-                  ),
+                  const DevPaulHorizontalLogo(),
                   const Spacer(),
                   Text(AppLocalizations.of(context)!.home_page_title_1,
                       style: getTextStyle()),
@@ -95,14 +84,14 @@ class HomeViewSm extends StatelessWidget {
                         borderColor: Colors.white,
                         internalVerticalPadding: 14,
                         internalHorizontalPadding: 8,
-                        icon: Icons.read_more,
+                        icon: FontAwesomeIcons.whatsapp,
                         width: size.width * 0.5,
                         onPressed: () async {
-                          final Uri _url = Uri.parse(
+                          final Uri url = Uri.parse(
                               "https://web.whatsapp.com/send?phone=+573148580454&text=Hola");
-                          ;
-                          if (!await launchUrl(_url)) {
-                            throw 'Could not launch $_url';
+
+                          if (!await launchUrl(url)) {
+                            throw 'Could not launch $url';
                           }
                         }),
                   ),

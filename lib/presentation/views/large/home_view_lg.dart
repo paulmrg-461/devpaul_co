@@ -7,6 +7,7 @@ import 'package:devpaul_co/presentation/shared/dev_paul_horizontal_logo.dart';
 import 'package:devpaul_co/presentation/shared/tech_stack_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -121,7 +122,7 @@ class HomeViewLg extends StatelessWidget {
                                         borderColor: Colors.white,
                                         internalVerticalPadding: 9,
                                         internalHorizontalPadding: 8,
-                                        icon: Icons.read_more,
+                                        icon: FontAwesomeIcons.whatsapp,
                                         onPressed: () async {
                                           final Uri _url = Uri.parse(
                                               "https://web.whatsapp.com/send?phone=+573148580454&text=Hola");

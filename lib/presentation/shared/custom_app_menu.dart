@@ -1,8 +1,9 @@
-import 'package:devpaul_co/presentation/providers/page_provider.dart';
-import 'package:devpaul_co/presentation/shared/custom_menu_item.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:devpaul_co/presentation/shared/custom_menu_item.dart';
+import 'package:devpaul_co/presentation/providers/page_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomAppMenu extends StatefulWidget {
   const CustomAppMenu({Key? key}) : super(key: key);
@@ -25,8 +26,47 @@ class _CustomAppMenuState extends State<CustomAppMenu>
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     final PageProvider pageProvider =
         Provider.of<PageProvider>(context, listen: false);
+
+    final List<String> menuStrings = [
+      AppLocalizations.of(context)!.home_page_menu_home,
+      AppLocalizations.of(context)!.home_page_menu_about,
+      AppLocalizations.of(context)!.home_page_menu_contact,
+      AppLocalizations.of(context)!.home_page_menu_location,
+      AppLocalizations.of(context)!.home_page_resume,
+    ];
+
+    final List<IconData> icons = [
+      Icons.home_outlined,
+      Icons.info_outline,
+      Icons.phone_outlined,
+      Icons.location_on_outlined,
+      Icons.account_circle_outlined
+    ];
+
+    final List<Widget> customMenuItems = menuStrings
+        .asMap()
+        .entries
+        .map((item) => Column(
+              children: [
+                const Divider(
+                  color: Colors.white70,
+                  thickness: 0.25,
+                ),
+                MobileMenuItem(
+                  text: item.value,
+                  onPressed: () => item.key == 4
+                      ? launchUrl(Uri.parse(
+                          'https://drive.google.com/file/d/1jAPgDvxwXu2IE-Gcje66cQ8SGfgz1lmf/view?usp=sharing'))
+                      : pageProvider.goTo(item.key),
+                  icon: icons[item.key],
+                ),
+              ],
+            ))
+        .toList();
+
     return InkWell(
       mouseCursor: SystemMouseCursors.click,
       onTap: () => setState(() {
@@ -34,40 +74,28 @@ class _CustomAppMenuState extends State<CustomAppMenu>
         isOpen = !isOpen;
       }),
       child: Container(
-        width: 160,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        color: Colors.black,
+        width: isOpen ? size.width * 0.5 : null,
+        height: isOpen ? size.height * 0.4 : null,
+        decoration: BoxDecoration(
+            color: const Color(0xff443357),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: Colors.white),
+            gradient: const RadialGradient(
+              center: Alignment.bottomLeft,
+              radius: 1,
+              colors: [Color(0xff443357), Color(0xff1F2631)],
+            )),
+        padding: isOpen
+            ? const EdgeInsets.symmetric(vertical: 14, horizontal: 32)
+            : const EdgeInsets.all(14),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _MenuTitle(isOpen: isOpen, controller: controller),
-            if (isOpen) ...[
-              CustomMenuItem(
-                  delay: 0,
-                  // icon: Icons.home_outlined,
-                  text: 'Home',
-                  onPressed: () => pageProvider.goTo(0)),
-              CustomMenuItem(
-                  delay: 100,
-                  // icon: Icons.info_outline,
-                  text: 'About',
-                  onPressed: () => pageProvider.goTo(1)),
-              CustomMenuItem(
-                  delay: 200,
-                  // icon: Icons.monetization_on_outlined,
-                  text: 'Pricing',
-                  onPressed: () => pageProvider.goTo(2)),
-              CustomMenuItem(
-                  delay: 300,
-                  // icon: Icons.handshake_outlined,
-                  text: 'Contact',
-                  onPressed: () => pageProvider.goTo(3)),
-              CustomMenuItem(
-                  delay: 400,
-                  // icon: Icons.location_on_outlined,
-                  text: 'Location',
-                  onPressed: () => pageProvider.goTo(4))
-            ],
+            if (isOpen) ...customMenuItems,
+            SizedBox(
+              height: isOpen ? 16 : 0,
+            )
           ],
         ),
       ),
@@ -89,19 +117,11 @@ class _MenuTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        AnimatedContainer(
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.easeInOut,
-          width: isOpen ? 40 : 0,
-        ),
-        Text(
-          'Menu',
-          style: GoogleFonts.roboto(color: Colors.white, fontSize: 18),
-        ),
-        const Spacer(),
+        isOpen ? const Spacer() : const SizedBox(),
         AnimatedIcon(
           icon: AnimatedIcons.menu_close,
           progress: controller,
+          size: 32,
           color: Colors.white,
         ),
       ],

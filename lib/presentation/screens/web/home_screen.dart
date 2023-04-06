@@ -1,5 +1,6 @@
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
+import 'package:devpaul_co/presentation/shared/custom_app_menu.dart';
 import 'package:devpaul_co/presentation/views/large/about_view_lg.dart';
 import 'package:devpaul_co/presentation/views/large/contact_view_lg.dart';
 import 'package:devpaul_co/presentation/views/large/footer_view_lg.dart';
@@ -45,33 +46,40 @@ class _HomeBody extends StatelessWidget {
         context.watch<TechStackProvider>();
 
     return LayoutBuilder(builder: (_, BoxConstraints constraints) {
-      return PageView(
-        scrollDirection: Axis.vertical,
-        physics: const BouncingScrollPhysics(),
-        controller: pageProvider.scrollController,
-        children: constraints.maxWidth > 900
-            ? [
-                HomeViewLg(
-                    pageProvider: pageProvider,
-                    techStackProvider: techStackProvider),
-                const AboutViewLg(),
-                const ContactViewLg(),
-                LocationViewLg(
-                  pageProvider: pageProvider,
-                ),
-                const FooterViewLg(),
-              ]
-            : [
-                HomeViewSm(
-                    pageProvider: pageProvider,
-                    techStackProvider: techStackProvider),
-                const AboutViewSm(),
-                const ContactViewSm(),
-                LocationViewSm(
-                  pageProvider: pageProvider,
-                ),
-                const FooterViewSm()
-              ],
+      return Stack(
+        children: [
+          PageView(
+            scrollDirection: Axis.vertical,
+            physics: const BouncingScrollPhysics(),
+            controller: pageProvider.scrollController,
+            children: constraints.maxWidth > 900
+                ? [
+                    HomeViewLg(
+                        pageProvider: pageProvider,
+                        techStackProvider: techStackProvider),
+                    const AboutViewLg(),
+                    const ContactViewLg(),
+                    LocationViewLg(
+                      pageProvider: pageProvider,
+                    ),
+                    const FooterViewLg(),
+                  ]
+                : [
+                    HomeViewSm(
+                        pageProvider: pageProvider,
+                        techStackProvider: techStackProvider),
+                    const AboutViewSm(),
+                    const ContactViewSm(),
+                    LocationViewSm(
+                      pageProvider: pageProvider,
+                    ),
+                    const FooterViewSm()
+                  ],
+          ),
+          constraints.maxWidth > 900
+              ? const SizedBox()
+              : const Positioned(right: 26, top: 26, child: CustomAppMenu()),
+        ],
       );
     });
   }
