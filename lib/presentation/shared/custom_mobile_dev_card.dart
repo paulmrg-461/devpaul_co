@@ -1,0 +1,92 @@
+import 'package:devpaul_co/domain/entities/dev_card_entity.dart';
+import 'package:flutter/material.dart';
+import 'package:animate_do/animate_do.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:devpaul_co/presentation/shared/custom_button.dart';
+
+class CustomMobileDevCard extends StatelessWidget {
+  final DevCardEntity devCardEntity;
+  final double width;
+  final double height;
+  const CustomMobileDevCard({
+    Key? key,
+    required this.devCardEntity,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInLeft(
+      duration: const Duration(milliseconds: 2000),
+      delay: Duration(milliseconds: devCardEntity.delay ?? 0),
+      child: Container(
+        width: width,
+        height: height,
+        margin: const EdgeInsets.only(right: 28),
+        padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 26),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: const LinearGradient(
+              colors: [Color(0xff443357), Color(0xff394053)],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            )),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+                decoration: BoxDecoration(
+                    color: const Color(0xff2D69FD),
+                    shape: BoxShape.circle,
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                        color: const Color(0xff2D69FD).withAlpha(60),
+                        blurRadius: 14.0,
+                        spreadRadius: 5,
+                        offset: const Offset(
+                          5,
+                          5,
+                        ),
+                      ),
+                    ]),
+                padding: const EdgeInsets.all(22),
+                child: Icon(
+                  devCardEntity.icon,
+                  color: Colors.white,
+                  size: 52,
+                )),
+            Padding(
+              padding: const EdgeInsets.only(top: 24, bottom: 16),
+              child: Text(
+                devCardEntity.title,
+                style: GoogleFonts.inter(
+                    color: const Color(0xffF2F0F6),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            Text(
+              devCardEntity.body,
+              textAlign: TextAlign.justify,
+              style: GoogleFonts.inter(
+                  color: const Color(0xffF2F0F6),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w200),
+            ),
+            const Spacer(),
+            CustomButton(
+              text: devCardEntity.buttonText,
+              onPressed: devCardEntity.callback,
+              backgroundColor: Colors.transparent,
+              buttonElevation: 0,
+              internalVerticalPadding: 12,
+              borderColor: Colors.white,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

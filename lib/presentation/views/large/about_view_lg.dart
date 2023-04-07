@@ -1,8 +1,8 @@
-import 'package:devpaul_co/presentation/shared/custom_dev_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:devpaul_co/presentation/shared/custom_dev_card.dart';
 
 class AboutViewLg extends StatelessWidget {
   const AboutViewLg({Key? key}) : super(key: key);
@@ -32,8 +32,6 @@ class AboutViewLg extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.25,
                       height: MediaQuery.of(context).size.height * 0.3,
-                      // width: MediaQuery.of(context).size.width * 0.25,
-                      // height: MediaQuery.of(context).size.width * 0.25,
                       decoration: BoxDecoration(
                           border: Border.all(
                               color: const Color(0xff443357), width: 4),

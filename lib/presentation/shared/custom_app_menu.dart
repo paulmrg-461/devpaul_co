@@ -79,9 +79,17 @@ class _CustomAppMenuState extends State<CustomAppMenu>
       child: Container(
         width: size.width,
         height: isOpen ? size.height * 0.5 : null,
-        decoration: const BoxDecoration(
-            color: Color(0xff443357),
-            gradient: RadialGradient(
+        decoration: BoxDecoration(
+            color: const Color(0xff443357),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                spreadRadius: 3,
+                blurRadius: 10,
+                offset: const Offset(3, 3), // changes position of shadow
+              ),
+            ],
+            gradient: const RadialGradient(
               center: Alignment.bottomLeft,
               radius: 1,
               colors: [Color(0xff443357), Color(0xff1F2631)],

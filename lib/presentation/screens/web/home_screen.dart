@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
 import 'package:devpaul_co/presentation/shared/custom_app_menu.dart';
@@ -11,8 +13,6 @@ import 'package:devpaul_co/presentation/views/small/contact_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/footer_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/home_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/location_view_sm.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
