@@ -17,20 +17,20 @@ class DevPaulHorizontalLogo extends StatelessWidget {
           SvgPicture.asset(
             'assets/logos/devpaul.svg',
             semanticsLabel: 'DevPaul Logo',
-            width: 44,
+            width: 38,
           ),
           const SizedBox(
-            width: 8,
+            width: 4,
           ),
           Text(
             '<dev',
             style: GoogleFonts.pressStart2p(
-                color: const Color(0xffAD54C2), fontSize: 22),
+                color: const Color(0xffAD54C2), fontSize: 20),
           ),
           Text(
             'paul/>',
             style: GoogleFonts.pressStart2p(
-                color: const Color(0xff2D69FD), fontSize: 22),
+                color: const Color(0xff2D69FD), fontSize: 20),
           ),
         ],
       ),

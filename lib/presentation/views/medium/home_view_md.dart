@@ -8,11 +8,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeViewSm extends StatelessWidget {
+class HomeViewMd extends StatelessWidget {
   final PageProvider pageProvider;
   final TechStackProvider techStackProvider;
 
-  const HomeViewSm(
+  const HomeViewMd(
       {Key? key, required this.pageProvider, required this.techStackProvider})
       : super(key: key);
 
@@ -22,7 +22,7 @@ class HomeViewSm extends StatelessWidget {
 
     TextStyle getTextStyle(
             {Color color = Colors.white,
-            double size = 40,
+            double size = 46,
             FontWeight weight = FontWeight.w600}) =>
         GoogleFonts.inter(color: color, fontSize: size, fontWeight: weight);
 
@@ -32,7 +32,7 @@ class HomeViewSm extends StatelessWidget {
         children: [
           Stack(children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 26),
+              padding: const EdgeInsets.symmetric(horizontal: 26),
               decoration: const BoxDecoration(
                   gradient: RadialGradient(
                 center: Alignment.bottomLeft,
@@ -45,14 +45,14 @@ class HomeViewSm extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: size.height * 0.1,
+                    height: size.height * 0.18,
                   ),
                   Text(AppLocalizations.of(context)!.home_page_title_1,
                       style: getTextStyle()),
                   Text(AppLocalizations.of(context)!.home_page_title_2,
                       style: getTextStyle()),
                   Text(AppLocalizations.of(context)!.home_page_title_3,
-                      style: getTextStyle(size: 28, weight: FontWeight.w400)),
+                      style: getTextStyle(size: 32, weight: FontWeight.w400)),
                   const SizedBox(
                     height: 22,
                   ),
@@ -61,7 +61,7 @@ class HomeViewSm extends StatelessWidget {
                           .home_page_professional_profile,
                       style: getTextStyle(
                           color: const Color(0xffA6A6A6),
-                          size: 16,
+                          size: 20,
                           weight: FontWeight.w200)),
                   const Spacer(),
                   CustomButton(
@@ -70,22 +70,22 @@ class HomeViewSm extends StatelessWidget {
                     backgroundColor: const Color(0xff2D69FD),
                     borderColor: const Color(0xff2D69FD),
                     buttonElevation: 10,
-                    internalVerticalPadding: 14,
-                    internalHorizontalPadding: 12,
-                    width: size.width * 0.5,
+                    internalVerticalPadding: 18,
+                    internalHorizontalPadding: 14,
+                    width: size.width * 0.35,
                     onPressed: () => pageProvider.goTo(1),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 26, top: 8),
+                    padding: const EdgeInsets.only(bottom: 32, top: 12),
                     child: CustomButton(
                         text: AppLocalizations.of(context)!
                             .home_page_whatsapp_button,
                         backgroundColor: Colors.transparent,
                         borderColor: Colors.white,
-                        internalVerticalPadding: 11,
-                        internalHorizontalPadding: 12,
+                        internalVerticalPadding: 14,
+                        internalHorizontalPadding: 8,
                         icon: FontAwesomeIcons.whatsapp,
-                        width: size.width * 0.5,
+                        width: size.width * 0.35,
                         onPressed: () async {
                           final Uri url = Uri.parse(
                               "whatsapp://send?phone=+573148580454&text=Hola");

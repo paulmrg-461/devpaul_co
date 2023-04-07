@@ -4,7 +4,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:devpaul_co/domain/entities/dev_card_entity.dart';
 
 class LocalDevCards extends StatelessWidget {
-  const LocalDevCards({super.key});
+  final double? width;
+  final double? height;
+  const LocalDevCards({super.key, this.width, this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +49,8 @@ class LocalDevCards extends StatelessWidget {
         ...localDevCards
             .map((devCard) => CustomMobileDevCard(
                 devCardEntity: devCard,
-                width: size.width * 0.6,
-                height: size.height * 0.4))
+                width: width ?? size.width * 0.6,
+                height: height ?? size.height * 0.4))
             .toList(),
       ]),
     );

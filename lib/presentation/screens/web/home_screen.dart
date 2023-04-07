@@ -1,3 +1,8 @@
+import 'package:devpaul_co/presentation/views/medium/about_view_md.dart';
+import 'package:devpaul_co/presentation/views/medium/contact_view_md.dart';
+import 'package:devpaul_co/presentation/views/medium/footer_view_md.dart';
+import 'package:devpaul_co/presentation/views/medium/home_view_md.dart';
+import 'package:devpaul_co/presentation/views/medium/location_view_md.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
@@ -46,37 +51,51 @@ class _HomeBody extends StatelessWidget {
         context.watch<TechStackProvider>();
 
     return LayoutBuilder(builder: (_, BoxConstraints constraints) {
+      List<Widget> pageViewList = [
+        HomeViewLg(
+            pageProvider: pageProvider, techStackProvider: techStackProvider),
+        const AboutViewLg(),
+        const ContactViewLg(),
+        LocationViewLg(
+          pageProvider: pageProvider,
+        ),
+        const FooterViewLg(),
+      ];
+
+      if (constraints.maxWidth <= 800) {
+        pageViewList = [
+          HomeViewSm(
+              pageProvider: pageProvider, techStackProvider: techStackProvider),
+          const AboutViewSm(),
+          const ContactViewSm(),
+          LocationViewSm(
+            pageProvider: pageProvider,
+          ),
+          const FooterViewSm(),
+        ];
+      }
+
+      if (constraints.maxWidth > 800 && constraints.maxWidth < 1100) {
+        pageViewList = [
+          HomeViewMd(
+              pageProvider: pageProvider, techStackProvider: techStackProvider),
+          const AboutViewMd(),
+          const ContactViewMd(),
+          LocationViewMd(
+            pageProvider: pageProvider,
+          ),
+          const FooterViewMd()
+        ];
+      }
+
       return Stack(
         children: [
           PageView(
-            scrollDirection: Axis.vertical,
-            physics: const BouncingScrollPhysics(),
-            controller: pageProvider.scrollController,
-            children: constraints.maxWidth > 900
-                ? [
-                    HomeViewLg(
-                        pageProvider: pageProvider,
-                        techStackProvider: techStackProvider),
-                    const AboutViewLg(),
-                    const ContactViewLg(),
-                    LocationViewLg(
-                      pageProvider: pageProvider,
-                    ),
-                    const FooterViewLg(),
-                  ]
-                : [
-                    HomeViewSm(
-                        pageProvider: pageProvider,
-                        techStackProvider: techStackProvider),
-                    const AboutViewSm(),
-                    const ContactViewSm(),
-                    LocationViewSm(
-                      pageProvider: pageProvider,
-                    ),
-                    const FooterViewSm()
-                  ],
-          ),
-          constraints.maxWidth > 900
+              scrollDirection: Axis.vertical,
+              physics: const BouncingScrollPhysics(),
+              controller: pageProvider.scrollController,
+              children: pageViewList),
+          constraints.maxWidth > 1100
               ? const SizedBox()
               : const Positioned(top: 0, child: CustomAppMenu()),
         ],

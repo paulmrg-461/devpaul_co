@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AboutViewSm extends StatelessWidget {
-  const AboutViewSm({Key? key}) : super(key: key);
+class AboutViewMd extends StatelessWidget {
+  const AboutViewMd({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,8 @@ class AboutViewSm extends StatelessWidget {
       // margin: const EdgeInsets.symmetric(vertical: 56, horizontal: 80),
       child: Padding(
         padding: EdgeInsets.only(
-          top: size.height * 0.11,
-          bottom: size.height * 0.065,
+          top: size.height * 0.14,
+          bottom: size.height * 0.05,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -32,17 +32,15 @@ class AboutViewSm extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.015,
+              height: size.height * 0.02,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Text(
                 """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ut proident sit velit nisi consequat sit cillum eiusmod magna esse adipisicing dolore. Ex sit est aute ipsum exercitation. Labore id occaecat ad irure commodo ex. Nulla anim commodo officia Lorem incididunt consectetur. Enim occaecat nulla laboris culpa commodo ad.""",
-                overflow: TextOverflow.ellipsis,
-                maxLines: 10,
                 style: GoogleFonts.inter(
                     color: const Color(0xff7B7E86),
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w200),
                 textAlign: TextAlign.justify,
               ),
@@ -59,11 +57,11 @@ class AboutViewSm extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.015,
+              height: size.height * 0.02,
             ),
             LocalDevCards(
-              width: size.width * 0.8,
-              height: size.height * 0.42,
+              width: size.width * 0.4,
+              height: size.height * 0.5,
             )
           ],
         ),

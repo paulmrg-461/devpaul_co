@@ -24,7 +24,7 @@ class CustomMobileDevCard extends StatelessWidget {
         width: width,
         height: height,
         margin: const EdgeInsets.only(right: 28),
-        padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 26),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             gradient: const LinearGradient(
@@ -36,44 +36,55 @@ class CustomMobileDevCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-                decoration: BoxDecoration(
-                    color: const Color(0xff2D69FD),
-                    shape: BoxShape.circle,
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                        color: const Color(0xff2D69FD).withAlpha(60),
-                        blurRadius: 14.0,
-                        spreadRadius: 5,
-                        offset: const Offset(
-                          5,
-                          5,
-                        ),
-                      ),
-                    ]),
-                padding: const EdgeInsets.all(22),
-                child: Icon(
-                  devCardEntity.icon,
-                  color: Colors.white,
-                  size: 52,
-                )),
+            Row(
+              children: [
+                Container(
+                    decoration: BoxDecoration(
+                        color: const Color(0xff2D69FD),
+                        shape: BoxShape.circle,
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: const Color(0xff2D69FD).withAlpha(60),
+                            blurRadius: 14.0,
+                            spreadRadius: 5,
+                            offset: const Offset(
+                              5,
+                              5,
+                            ),
+                          ),
+                        ]),
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(
+                      devCardEntity.icon,
+                      color: Colors.white,
+                      size: 42,
+                    )),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 18),
+                    child: Text(
+                      devCardEntity.title,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: GoogleFonts.inter(
+                          color: const Color(0xffF2F0F6),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Padding(
-              padding: const EdgeInsets.only(top: 24, bottom: 16),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Text(
-                devCardEntity.title,
+                devCardEntity.body,
+                textAlign: TextAlign.justify,
                 style: GoogleFonts.inter(
                     color: const Color(0xffF2F0F6),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w200),
               ),
-            ),
-            Text(
-              devCardEntity.body,
-              textAlign: TextAlign.justify,
-              style: GoogleFonts.inter(
-                  color: const Color(0xffF2F0F6),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w200),
             ),
             const Spacer(),
             CustomButton(

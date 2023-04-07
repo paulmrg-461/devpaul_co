@@ -78,7 +78,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
       }),
       child: Container(
         width: size.width,
-        height: isOpen ? size.height * 0.5 : null,
+        height: isOpen ? size.height * 0.63 : null,
         decoration: BoxDecoration(
             color: const Color(0xff443357),
             boxShadow: [
@@ -94,7 +94,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
               radius: 1,
               colors: [Color(0xff443357), Color(0xff1F2631)],
             )),
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 26),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -127,14 +127,14 @@ class _MenuTitle extends StatelessWidget {
       children: [
         const DevPaulHorizontalLogo(),
         Container(
-          padding: const EdgeInsets.all(6),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(10),
               border: Border.all(color: Colors.white)),
           child: AnimatedIcon(
             icon: AnimatedIcons.menu_close,
             progress: controller,
-            size: 32,
+            size: 28,
             color: Colors.white,
           ),
         ),
