@@ -87,7 +87,7 @@ class _CustomInputState extends State<CustomInput> {
                       }),
                     )
                   : null,
-              contentPadding: const EdgeInsets.symmetric(vertical: 4),
+              contentPadding: const EdgeInsets.symmetric(vertical: 16),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius!),
                 borderSide: BorderSide(color: widget.borderColor!, width: 1.5),

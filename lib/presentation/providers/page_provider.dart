@@ -4,11 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:universal_html/html.dart' as html;
 
 class PageProvider extends ChangeNotifier {
+  late AnimationController menuAnimationController;
+
+  Animation<double> get animation => menuAnimationController;
+
+  @override
+  void dispose() {
+    menuAnimationController.dispose();
+    super.dispose();
+  }
+
   PageController scrollController = PageController();
   final List<String> _pages = ['Home', 'About', 'Contact', 'Location'];
   int _currentIndex = 0;
   bool _menuIsOpen = false;
-  late AnimationController _menuAnimationController;
 
   createScrollController(String routeName) {
     scrollController = PageController(initialPage: getPageIndex(routeName));
@@ -33,22 +42,11 @@ class PageProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  AnimationController get menuAnimationController => _menuAnimationController;
-
-  set menuAnimationController(AnimationController menuAnimationController) {
-    _menuAnimationController = menuAnimationController;
-    notifyListeners();
-  }
-
   goTo(int index) {
     scrollController.animateToPage(index,
         duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+    menuAnimationController.reverse();
     _menuIsOpen = false;
-    try {
-      _menuAnimationController.reverse();
-    } catch (e) {
-      print(e);
-    }
     notifyListeners();
   }
 }

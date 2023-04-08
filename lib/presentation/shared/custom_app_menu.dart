@@ -70,45 +70,47 @@ class _CustomAppMenuState extends State<CustomAppMenu>
             ))
         .toList();
 
-    return InkWell(
-      mouseCursor: SystemMouseCursors.click,
-      onTap: () {
-        pageProvider.menuIsOpen
-            ? pageProvider.menuAnimationController.reverse()
-            : pageProvider.menuAnimationController.forward();
-        pageProvider.menuIsOpen = !pageProvider.menuIsOpen;
-      },
-      child: Container(
-        width: size.width,
-        height: pageProvider.menuIsOpen ? size.height * 0.63 : null,
-        decoration: BoxDecoration(
-            color: const Color(0xff443357),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 3,
-                blurRadius: 10,
-                offset: const Offset(3, 3), // changes position of shadow
-              ),
+    return Consumer<PageProvider>(builder: (context, controller, child) {
+      return InkWell(
+        mouseCursor: SystemMouseCursors.click,
+        onTap: () => setState(() {
+          pageProvider.menuIsOpen
+              ? controller.menuAnimationController.reverse()
+              : controller.menuAnimationController.forward();
+          pageProvider.menuIsOpen = !pageProvider.menuIsOpen;
+        }),
+        child: Container(
+          width: size.width,
+          height: pageProvider.menuIsOpen ? size.height * 0.63 : null,
+          decoration: BoxDecoration(
+              color: const Color(0xff443357),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: const Offset(3, 3), // changes position of shadow
+                ),
+              ],
+              gradient: const RadialGradient(
+                center: Alignment.bottomLeft,
+                radius: 1,
+                colors: [Color(0xff443357), Color(0xff1F2631)],
+              )),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _MenuTitle(controller: controller.menuAnimationController),
+              if (pageProvider.menuIsOpen) ...customMenuItems,
+              SizedBox(
+                height: pageProvider.menuIsOpen ? 16 : 0,
+              )
             ],
-            gradient: const RadialGradient(
-              center: Alignment.bottomLeft,
-              radius: 1,
-              colors: [Color(0xff443357), Color(0xff1F2631)],
-            )),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _MenuTitle(controller: controller),
-            if (pageProvider.menuIsOpen) ...customMenuItems,
-            SizedBox(
-              height: pageProvider.menuIsOpen ? 16 : 0,
-            )
-          ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
