@@ -15,7 +15,7 @@ class CustomAppMenu extends StatefulWidget {
 
 class _CustomAppMenuState extends State<CustomAppMenu>
     with SingleTickerProviderStateMixin {
-  bool isOpen = false;
+  // bool isOpen = false;
   late AnimationController controller;
   int delay = 30;
 
@@ -29,8 +29,8 @@ class _CustomAppMenuState extends State<CustomAppMenu>
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final PageProvider pageProvider =
-        Provider.of<PageProvider>(context, listen: false);
+    final PageProvider pageProvider = Provider.of<PageProvider>(context);
+    pageProvider.menuAnimationController = controller;
 
     final List<String> menuStrings = [
       AppLocalizations.of(context)!.home_page_menu_home,
@@ -72,13 +72,15 @@ class _CustomAppMenuState extends State<CustomAppMenu>
 
     return InkWell(
       mouseCursor: SystemMouseCursors.click,
-      onTap: () => setState(() {
-        isOpen ? controller.reverse() : controller.forward();
-        isOpen = !isOpen;
-      }),
+      onTap: () {
+        pageProvider.menuIsOpen
+            ? pageProvider.menuAnimationController.reverse()
+            : pageProvider.menuAnimationController.forward();
+        pageProvider.menuIsOpen = !pageProvider.menuIsOpen;
+      },
       child: Container(
         width: size.width,
-        height: isOpen ? size.height * 0.63 : null,
+        height: pageProvider.menuIsOpen ? size.height * 0.63 : null,
         decoration: BoxDecoration(
             color: const Color(0xff443357),
             boxShadow: [
@@ -98,10 +100,10 @@ class _CustomAppMenuState extends State<CustomAppMenu>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _MenuTitle(isOpen: isOpen, controller: controller),
-            if (isOpen) ...customMenuItems,
+            _MenuTitle(controller: controller),
+            if (pageProvider.menuIsOpen) ...customMenuItems,
             SizedBox(
-              height: isOpen ? 16 : 0,
+              height: pageProvider.menuIsOpen ? 16 : 0,
             )
           ],
         ),
@@ -113,11 +115,9 @@ class _CustomAppMenuState extends State<CustomAppMenu>
 class _MenuTitle extends StatelessWidget {
   const _MenuTitle({
     Key? key,
-    required this.isOpen,
     required this.controller,
   }) : super(key: key);
 
-  final bool isOpen;
   final AnimationController controller;
 
   @override

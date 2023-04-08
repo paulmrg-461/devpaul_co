@@ -32,7 +32,8 @@ class HomeViewSm extends StatelessWidget {
         children: [
           Stack(children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 26),
+              padding: const EdgeInsets.only(
+                  left: 16, right: 16, top: 26, bottom: 18),
               decoration: const BoxDecoration(
                   gradient: RadialGradient(
                 center: Alignment.bottomLeft,
@@ -54,7 +55,7 @@ class HomeViewSm extends StatelessWidget {
                   Text(AppLocalizations.of(context)!.home_page_title_3,
                       style: getTextStyle(size: 28, weight: FontWeight.w400)),
                   const SizedBox(
-                    height: 22,
+                    height: 16,
                   ),
                   Text(
                       AppLocalizations.of(context)!
