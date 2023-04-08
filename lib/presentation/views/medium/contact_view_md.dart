@@ -7,20 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ContactViewMd extends StatelessWidget {
+class ContactViewMd extends StatefulWidget {
   final CollaboratorsProvider collaboratorsProvider;
   const ContactViewMd({Key? key, required this.collaboratorsProvider})
       : super(key: key);
 
   @override
+  State<ContactViewMd> createState() => _ContactViewMdState();
+}
+
+String name = '';
+String email = '';
+String cellphone = '';
+String message = '';
+
+class _ContactViewMdState extends State<ContactViewMd> {
+  @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     final Size size = MediaQuery.of(context).size;
-
-    String name = '';
-    String email = '';
-    String cellphone = '';
-    String message = '';
 
     return Container(
       color: Colors.white,
@@ -138,7 +143,7 @@ class ContactViewMd extends StatelessWidget {
                 ),
               ),
               CollaboratorsListView(
-                collaborators: collaboratorsProvider.collaborators,
+                collaborators: widget.collaboratorsProvider.collaborators,
                 width: size.width * 0.45,
               ),
             ],

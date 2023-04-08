@@ -7,20 +7,25 @@ import 'package:devpaul_co/presentation/shared/collaborators_list_view.dart';
 import 'package:devpaul_co/presentation/shared/custom_button.dart';
 import 'package:devpaul_co/presentation/shared/custom_input.dart';
 
-class ContactViewSm extends StatelessWidget {
+class ContactViewSm extends StatefulWidget {
   final CollaboratorsProvider collaboratorsProvider;
   const ContactViewSm({Key? key, required this.collaboratorsProvider})
       : super(key: key);
 
   @override
+  State<ContactViewSm> createState() => _ContactViewSmState();
+}
+
+String name = '';
+String email = '';
+String cellphone = '';
+String message = '';
+
+class _ContactViewSmState extends State<ContactViewSm> {
+  @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     final Size size = MediaQuery.of(context).size;
-
-    String name = '';
-    String email = '';
-    String cellphone = '';
-    String message = '';
 
     return Container(
       color: Colors.white,
@@ -46,7 +51,7 @@ class ContactViewSm extends StatelessWidget {
               Padding(
                 // width: MediaQuery.of(context).size.width * 0.4,
                 padding: const EdgeInsets.only(
-                    top: 14, bottom: 26, left: 28, right: 28),
+                    top: 12, bottom: 18, left: 28, right: 28),
                 child: Text(
                   """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ex nostrud ad aliqua enim anim est.""",
                   style: GoogleFonts.inter(
@@ -128,7 +133,7 @@ class ContactViewSm extends StatelessWidget {
               ),
               const Spacer(),
               Padding(
-                padding: const EdgeInsets.only(left: 28, bottom: 16),
+                padding: const EdgeInsets.only(left: 28, bottom: 12),
                 child: Text(
                   AppLocalizations.of(context)!.contact_page_team_colaborators,
                   style: GoogleFonts.inter(
@@ -138,7 +143,7 @@ class ContactViewSm extends StatelessWidget {
                 ),
               ),
               CollaboratorsListView(
-                collaborators: collaboratorsProvider.collaborators,
+                collaborators: widget.collaboratorsProvider.collaborators,
                 width: size.width * 0.85,
               ),
             ],
