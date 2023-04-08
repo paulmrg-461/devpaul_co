@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomInput extends StatefulWidget {
   final String? hintText;
-  final TextEditingController? textController;
+  final Function(String) onChanged;
+  final String? Function(String?)? validator;
   final IconData? icon;
   final bool passwordVisibility;
   final TextInputType textInputType;
@@ -20,15 +21,16 @@ class CustomInput extends StatefulWidget {
 
   const CustomInput({
     Key? key,
-    @required this.hintText,
-    @required this.textController,
-    @required this.icon,
+    required this.hintText,
+    required this.onChanged,
+    this.validator,
+    required this.icon,
     this.passwordVisibility = false,
     this.textInputType = TextInputType.text,
     this.obscureText = false,
     this.enabledInputInteraction = true,
     this.textCapitalization = TextCapitalization.none,
-    this.borderRadius = 36,
+    this.borderRadius = 10,
     this.backgroundColor = Colors.white,
     this.borderColor = Colors.blue,
     this.fontColor = Colors.black54,
@@ -52,7 +54,9 @@ class _CustomInputState extends State<CustomInput> {
           color: widget.backgroundColor!,
           borderRadius: BorderRadius.circular(widget.borderRadius!),
         ),
-        child: TextField(
+        child: TextFormField(
+          onChanged: widget.onChanged,
+          validator: widget.validator,
           minLines: widget.minLines!,
           maxLines: widget.maxLines!,
           expands: widget.expands!,
@@ -60,7 +64,6 @@ class _CustomInputState extends State<CustomInput> {
               color: widget.fontColor!,
               fontSize: 14,
               fontWeight: FontWeight.w200),
-          controller: widget.textController,
           autocorrect: false,
           keyboardType: widget.textInputType,
           obscureText: (widget.obscureText && passwordObscure) ? true : false,

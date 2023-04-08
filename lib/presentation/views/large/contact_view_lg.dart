@@ -1,3 +1,4 @@
+import 'package:devpaul_co/core/validators/input_validators.dart';
 import 'package:devpaul_co/presentation/shared/custom_button.dart';
 import 'package:devpaul_co/presentation/shared/custom_input.dart';
 import 'package:devpaul_co/presentation/shared/dev_paul_vertical_logo.dart';
@@ -6,21 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ContactViewLg extends StatefulWidget {
+class ContactViewLg extends StatelessWidget {
   const ContactViewLg({Key? key}) : super(key: key);
 
   @override
-  State<ContactViewLg> createState() => _ContactViewLgState();
-}
-
-class _ContactViewLgState extends State<ContactViewLg> {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController messageController = TextEditingController();
-
-  @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+    String name = '';
+    String email = '';
+    String cellphone = '';
+    String message = '';
+
     return Container(
       color: Colors.white,
       child: Padding(
@@ -95,58 +93,73 @@ class _ContactViewLgState extends State<ContactViewLg> {
                           textAlign: TextAlign.justify,
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width * 0.27,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomInput(
-                              hintText: 'Full name',
-                              textController: nameController,
-                              icon: Icons.person_outline_outlined,
-                              textInputType: TextInputType.name,
-                              textCapitalization: TextCapitalization.sentences,
-                              fontColor: const Color(0xff7B7E86),
-                              borderColor: const Color(0xff2D69FD),
-                            ),
-                            CustomInput(
-                              hintText: 'Email',
-                              textController: emailController,
-                              textInputType: TextInputType.emailAddress,
-                              icon: Icons.email_outlined,
-                              fontColor: const Color(0xff7B7E86),
-                              borderColor: const Color(0xff2D69FD),
-                            ),
-                            CustomInput(
-                              hintText: 'Phone',
-                              textController: phoneController,
-                              textInputType: TextInputType.phone,
-                              icon: Icons.phone_outlined,
-                              fontColor: const Color(0xff7B7E86),
-                              borderColor: const Color(0xff2D69FD),
-                            ),
-                            CustomInput(
-                              hintText: 'Message',
-                              textController: phoneController,
-                              textInputType: TextInputType.multiline,
-                              icon: Icons.message_outlined,
-                              fontColor: const Color(0xff7B7E86),
-                              borderColor: const Color(0xff2D69FD),
-                              // expands: true,
-                              minLines: 6,
-                              maxLines: 16,
-                              borderRadius: 18,
-                            ),
-                            CustomButton(
-                              text: AppLocalizations.of(context)!
-                                  .home_page_menu_contact,
-                              onPressed: () => print('Hola Amiguis'),
-                              backgroundColor: Colors.transparent,
-                              fontColor: const Color(0xff2D69FD),
-                              buttonElevation: 0,
-                              borderColor: const Color(0xff2D69FD),
-                            ),
-                          ],
+                        child: Form(
+                          key: formKey,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomInput(
+                                hintText: 'Full name',
+                                onChanged: (value) => name = value,
+                                validator: (value) =>
+                                    InputValidator.emptyValidator(value: value),
+                                textInputType: TextInputType.name,
+                                icon: Icons.person_outline_outlined,
+                                textCapitalization:
+                                    TextCapitalization.sentences,
+                                fontColor: const Color(0xff7B7E86),
+                                borderColor: const Color(0xff2D69FD),
+                              ),
+                              CustomInput(
+                                hintText: 'Email',
+                                onChanged: (value) => email = value,
+                                validator: (value) =>
+                                    InputValidator.emailValidator(value),
+                                textInputType: TextInputType.emailAddress,
+                                icon: Icons.email_outlined,
+                                fontColor: const Color(0xff7B7E86),
+                                borderColor: const Color(0xff2D69FD),
+                              ),
+                              CustomInput(
+                                hintText: 'Phone',
+                                onChanged: (value) => cellphone = value,
+                                validator: (value) =>
+                                    InputValidator.phoneValidator(value),
+                                textInputType: TextInputType.phone,
+                                icon: Icons.phone_outlined,
+                                fontColor: const Color(0xff7B7E86),
+                                borderColor: const Color(0xff2D69FD),
+                              ),
+                              CustomInput(
+                                hintText: 'Message',
+                                onChanged: (value) => message = value,
+                                validator: (value) =>
+                                    InputValidator.emptyValidator(value: value),
+                                textInputType: TextInputType.multiline,
+                                icon: Icons.message_outlined,
+                                fontColor: const Color(0xff7B7E86),
+                                borderColor: const Color(0xff2D69FD),
+                                // expands: true,
+                                minLines: 6,
+                                maxLines: 16,
+                              ),
+                              CustomButton(
+                                text: AppLocalizations.of(context)!
+                                    .home_page_menu_contact,
+                                backgroundColor: Colors.transparent,
+                                fontColor: const Color(0xff2D69FD),
+                                buttonElevation: 0,
+                                borderColor: const Color(0xff2D69FD),
+                                onPressed: () {
+                                  final isValid =
+                                      formKey.currentState!.validate();
+                                  if (!isValid) return;
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
