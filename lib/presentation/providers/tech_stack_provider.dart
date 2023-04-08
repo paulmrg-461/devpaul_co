@@ -10,7 +10,7 @@ class TechStackProvider extends ChangeNotifier {
 
   TechStackProvider({required this.techStackRepository});
 
-  void getPlans() {
+  void getTechStack() {
     techStackList = techStackRepository.getTechStack();
     initialLoading = false;
     notifyListeners();

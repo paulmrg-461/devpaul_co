@@ -1,10 +1,12 @@
-import 'package:devpaul_co/presentation/views/medium/about_view_md.dart';
+import 'package:devpaul_co/presentation/providers/collaborators_provider.dart';
 import 'package:devpaul_co/presentation/views/medium/contact_view_md.dart';
+import 'package:devpaul_co/presentation/views/small/contact_view_sm.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:devpaul_co/presentation/views/medium/about_view_md.dart';
 import 'package:devpaul_co/presentation/views/medium/footer_view_md.dart';
 import 'package:devpaul_co/presentation/views/medium/home_view_md.dart';
 import 'package:devpaul_co/presentation/views/medium/location_view_md.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
 import 'package:devpaul_co/presentation/shared/custom_app_menu.dart';
@@ -14,7 +16,6 @@ import 'package:devpaul_co/presentation/views/large/footer_view_lg.dart';
 import 'package:devpaul_co/presentation/views/large/home_view_lg.dart';
 import 'package:devpaul_co/presentation/views/large/location_view_lg.dart';
 import 'package:devpaul_co/presentation/views/small/about_view_sm.dart';
-import 'package:devpaul_co/presentation/views/small/contact_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/footer_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/home_view_sm.dart';
 import 'package:devpaul_co/presentation/views/small/location_view_sm.dart';
@@ -49,6 +50,8 @@ class _HomeBody extends StatelessWidget {
         Provider.of<PageProvider>(context, listen: false);
     final TechStackProvider techStackProvider =
         context.watch<TechStackProvider>();
+    final CollaboratorsProvider collaboratorsProvider =
+        context.watch<CollaboratorsProvider>();
 
     return LayoutBuilder(builder: (_, BoxConstraints constraints) {
       List<Widget> pageViewList = [
@@ -67,7 +70,7 @@ class _HomeBody extends StatelessWidget {
           HomeViewSm(
               pageProvider: pageProvider, techStackProvider: techStackProvider),
           const AboutViewSm(),
-          const ContactViewSm(),
+          ContactViewSm(collaboratorsProvider: collaboratorsProvider),
           LocationViewSm(
             pageProvider: pageProvider,
           ),
@@ -80,7 +83,7 @@ class _HomeBody extends StatelessWidget {
           HomeViewMd(
               pageProvider: pageProvider, techStackProvider: techStackProvider),
           const AboutViewMd(),
-          const ContactViewMd(),
+          ContactViewMd(collaboratorsProvider: collaboratorsProvider),
           LocationViewMd(
             pageProvider: pageProvider,
           ),

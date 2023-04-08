@@ -1,0 +1,5 @@
+import 'package:devpaul_co/domain/entities/collaborator_entity.dart';
+
+abstract class CollaboratorDatasource {
+  List<CollaboratorEntity> getCollaborators();
+}

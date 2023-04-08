@@ -55,14 +55,14 @@ class _CustomInputState extends State<CustomInput> {
           borderRadius: BorderRadius.circular(widget.borderRadius!),
         ),
         child: TextFormField(
+          minLines: widget.minLines!,
           onChanged: widget.onChanged,
           validator: widget.validator,
-          minLines: widget.minLines!,
           maxLines: widget.maxLines!,
           expands: widget.expands!,
           style: GoogleFonts.inter(
               color: widget.fontColor!,
-              fontSize: 14,
+              fontSize: 12,
               fontWeight: FontWeight.w200),
           autocorrect: false,
           keyboardType: widget.textInputType,
@@ -73,6 +73,7 @@ class _CustomInputState extends State<CustomInput> {
               isCollapsed: true,
               prefixIcon: Icon(
                 widget.icon,
+                size: 22,
                 color: widget.borderColor,
               ),
               suffixIcon: widget.passwordVisibility
@@ -86,7 +87,7 @@ class _CustomInputState extends State<CustomInput> {
                       }),
                     )
                   : null,
-              contentPadding: const EdgeInsets.symmetric(vertical: 16),
+              contentPadding: const EdgeInsets.symmetric(vertical: 4),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.borderRadius!),
                 borderSide: BorderSide(color: widget.borderColor!, width: 1.5),
