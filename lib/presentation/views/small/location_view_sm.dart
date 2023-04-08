@@ -46,8 +46,8 @@ class LocationViewSm extends StatelessWidget {
           Expanded(child: getMap()),
           Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.33,
-            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 22),
+            height: MediaQuery.of(context).size.height * 0.36,
+            padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
               colors: [Color(0xff443357), Color(0xff394053)],

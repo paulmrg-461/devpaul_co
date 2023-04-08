@@ -31,11 +31,11 @@ class HomePage extends StatelessWidget {
   }
 
   BoxDecoration buildBoxDecoration() => const BoxDecoration(
-      gradient: LinearGradient(
-          colors: [Colors.white, Colors.blueGrey],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          stops: [0.5, 0.5]));
+          gradient: LinearGradient(
+        colors: [Color(0xff443357), Color(0xff394053)],
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+      ));
 }
 
 class _HomeBody extends StatelessWidget {
