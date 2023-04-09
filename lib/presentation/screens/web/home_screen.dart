@@ -55,7 +55,7 @@ class _HomeBody extends StatelessWidget {
         HomeViewLg(
             pageProvider: pageProvider, techStackProvider: techStackProvider),
         const AboutViewLg(),
-        const ContactViewLg(),
+        ContactViewLg(collaboratorsProvider: collaboratorsProvider),
         LocationViewLg(
           pageProvider: pageProvider,
         ),

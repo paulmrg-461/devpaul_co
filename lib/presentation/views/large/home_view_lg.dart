@@ -94,8 +94,8 @@ class HomeViewLg extends StatelessWidget {
                                       .home_page_professional_profile,
                                   style: GoogleFonts.inter(
                                       color: const Color(0xffA6A6A6),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w100),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w200),
                                 ),
                                 const SizedBox(
                                   height: 32,
