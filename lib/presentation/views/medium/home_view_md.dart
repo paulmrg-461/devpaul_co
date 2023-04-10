@@ -22,7 +22,7 @@ class HomeViewMd extends StatelessWidget {
 
     TextStyle getTextStyle(
             {Color color = Colors.white,
-            double size = 46,
+            double size = 48,
             FontWeight weight = FontWeight.w600}) =>
         GoogleFonts.inter(color: color, fontSize: size, fontWeight: weight);
 
@@ -52,7 +52,7 @@ class HomeViewMd extends StatelessWidget {
                   Text(AppLocalizations.of(context)!.home_page_title_2,
                       style: getTextStyle()),
                   Text(AppLocalizations.of(context)!.home_page_title_3,
-                      style: getTextStyle(size: 32, weight: FontWeight.w400)),
+                      style: getTextStyle(size: 36, weight: FontWeight.w400)),
                   const SizedBox(
                     height: 22,
                   ),
@@ -61,8 +61,8 @@ class HomeViewMd extends StatelessWidget {
                           .home_page_professional_profile,
                       style: getTextStyle(
                           color: const Color(0xffA6A6A6),
-                          size: 20,
-                          weight: FontWeight.w200)),
+                          size: 24,
+                          weight: FontWeight.w300)),
                   const Spacer(),
                   CustomButton(
                     text:

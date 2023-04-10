@@ -67,7 +67,7 @@ class HomeViewLg extends StatelessWidget {
                                       .home_page_title_1,
                                   style: GoogleFonts.inter(
                                       color: Colors.white,
-                                      fontSize: 38,
+                                      fontSize: 44,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
@@ -75,7 +75,7 @@ class HomeViewLg extends StatelessWidget {
                                       .home_page_title_2,
                                   style: GoogleFonts.inter(
                                       color: Colors.white,
-                                      fontSize: 38,
+                                      fontSize: 44,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 Text(
@@ -84,7 +84,7 @@ class HomeViewLg extends StatelessWidget {
                                   style: GoogleFonts.inter(
                                       color: Colors.white,
                                       fontSize: 38,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w500),
                                 ),
                                 const SizedBox(
                                   height: 16,
@@ -94,8 +94,8 @@ class HomeViewLg extends StatelessWidget {
                                       .home_page_professional_profile,
                                   style: GoogleFonts.inter(
                                       color: const Color(0xffA6A6A6),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w200),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w300),
                                 ),
                                 const SizedBox(
                                   height: 32,

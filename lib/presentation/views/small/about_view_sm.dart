@@ -37,7 +37,7 @@ class AboutViewSm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Text(
-                """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ut proident sit velit nisi consequat sit cillum eiusmod magna esse adipisicing dolore. Ex sit est aute ipsum exercitation. Labore id occaecat ad irure commodo ex. Nulla anim commodo officia Lorem incididunt consectetur. Enim occaecat nulla laboris culpa commodo ad.""",
+                AppLocalizations.of(context)!.about_page_who_i_am_body,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 10,
                 style: GoogleFonts.inter(

@@ -44,7 +44,7 @@ class _ContactViewMdState extends State<ContactViewMd> {
                   AppLocalizations.of(context)!.contact_page_work_together,
                   style: GoogleFonts.inter(
                       color: const Color(0xff232835),
-                      fontSize: 24,
+                      fontSize: 28,
                       fontWeight: FontWeight.w600),
                 ),
               ),
@@ -53,11 +53,11 @@ class _ContactViewMdState extends State<ContactViewMd> {
                 padding: const EdgeInsets.only(
                     top: 14, bottom: 26, left: 28, right: 28),
                 child: Text(
-                  """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ex nostrud ad aliqua enim anim est.""",
+                  AppLocalizations.of(context)!.contact_page_work_together_body,
                   style: GoogleFonts.inter(
                       color: const Color(0xff7B7E86),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w200),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -133,13 +133,27 @@ class _ContactViewMdState extends State<ContactViewMd> {
               ),
               const Spacer(),
               Padding(
-                padding: const EdgeInsets.only(left: 28, bottom: 16),
+                padding: const EdgeInsets.only(left: 28),
                 child: Text(
                   AppLocalizations.of(context)!.contact_page_team_colaborators,
                   style: GoogleFonts.inter(
                       color: const Color(0xff232835),
-                      fontSize: 24,
+                      fontSize: 28,
                       fontWeight: FontWeight.w600),
+                ),
+              ),
+              Padding(
+                // width: MediaQuery.of(context).size.width * 0.4,
+                padding: const EdgeInsets.only(
+                    top: 14, bottom: 26, left: 28, right: 28),
+                child: Text(
+                  AppLocalizations.of(context)!
+                      .contact_page_team_colaborators_body,
+                  style: GoogleFonts.inter(
+                      color: const Color(0xff7B7E86),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
+                  textAlign: TextAlign.justify,
                 ),
               ),
               CollaboratorsListView(

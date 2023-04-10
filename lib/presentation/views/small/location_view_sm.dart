@@ -80,7 +80,7 @@ class LocationViewSm extends StatelessWidget {
                     imagePath: 'assets/logos/location.svg',
                     semanticLabel: 'Location label',
                     text:
-                        'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo Casa F22',
+                        'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo  ',
                     url:
                         'https://www.google.com/maps/place/DevPaul/@2.4554602,-76.5940771,15z/data=!4m5!3m4!1s0x0:0x5dfe0cc97107e505!8m2!3d2.4554602!4d-76.5940771'),
                 Row(

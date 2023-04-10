@@ -53,7 +53,7 @@ class _ContactViewSmState extends State<ContactViewSm> {
                 padding: const EdgeInsets.only(
                     top: 12, bottom: 18, left: 28, right: 28),
                 child: Text(
-                  """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ex nostrud ad aliqua enim anim est.""",
+                  AppLocalizations.of(context)!.contact_page_work_together_body,
                   style: GoogleFonts.inter(
                       color: const Color(0xff7B7E86),
                       fontSize: 14,

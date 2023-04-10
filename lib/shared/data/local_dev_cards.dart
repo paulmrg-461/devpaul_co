@@ -16,24 +16,21 @@ class LocalDevCards extends StatelessWidget {
       DevCardEntity(
           icon: Icons.phone_android_rounded,
           title: AppLocalizations.of(context)!.about_page_mobile_dev_card,
-          body:
-              'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+          body: AppLocalizations.of(context)!.about_page_mobile_dev_card_body,
           buttonText: 'See more',
           callback: () => print('Mobile development'),
           delay: 100),
       DevCardEntity(
           icon: Icons.web_asset_rounded,
           title: AppLocalizations.of(context)!.about_page_web_dev_card,
-          body:
-              'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+          body: AppLocalizations.of(context)!.about_page_web_dev_card_body,
           buttonText: 'See more',
           callback: () => print('Web development'),
           delay: 300),
       DevCardEntity(
           icon: Icons.devices_other_rounded,
           title: AppLocalizations.of(context)!.about_page_backend_dev_card,
-          body:
-              'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+          body: AppLocalizations.of(context)!.about_page_backend_dev_card_body,
           buttonText: 'See more',
           callback: () => print('Backend development'),
           delay: 600),

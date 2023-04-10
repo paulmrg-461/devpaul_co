@@ -91,6 +91,7 @@ class _HomeBody extends StatelessWidget {
               scrollDirection: Axis.vertical,
               physics: const BouncingScrollPhysics(),
               controller: pageProvider.scrollController,
+              pageSnapping: constraints.maxWidth > 1100 ? false : true,
               children: pageViewList),
           constraints.maxWidth > 1100
               ? const SizedBox()

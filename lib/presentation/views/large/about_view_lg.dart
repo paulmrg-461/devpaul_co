@@ -14,7 +14,7 @@ class AboutViewLg extends StatelessWidget {
       // margin: const EdgeInsets.symmetric(vertical: 56, horizontal: 80),
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.08,
+            horizontal: MediaQuery.of(context).size.width * 0.025,
             vertical: MediaQuery.of(context).size.height * 0.02),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,17 +30,17 @@ class AboutViewLg extends StatelessWidget {
                 children: [
                   FadeInLeft(
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.25,
+                      width: MediaQuery.of(context).size.width * 0.3,
                       height: MediaQuery.of(context).size.height * 0.3,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xff443357), width: 4),
+                          // border: Border.all(
+                          //     color: const Color(0xff443357), width: 4),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xff443357).withOpacity(0.3),
+                              color: const Color(0xff443357).withOpacity(0.2),
                               offset: const Offset(
-                                10.0,
-                                10.0,
+                                5.0,
+                                5.0,
                               ),
                               blurRadius: 20.0,
                               spreadRadius: 2.0,
@@ -64,6 +64,7 @@ class AboutViewLg extends StatelessWidget {
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           AppLocalizations.of(context)!.about_page_who_i_am,
@@ -76,11 +77,12 @@ class AboutViewLg extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.03,
                         ),
                         Text(
-                          """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ex nostrud ad aliqua enim anim est. Ad aute ut voluptate consequat velit deserunt esse sunt proident ipsum laborum. Esse dolore duis dolore do anim. Deserunt sunt minim duis pariatur deserunt minim nostrud in sit cupidatat. Ut proident sit velit nisi consequat sit cillum eiusmod magna esse adipisicing dolore. Ex sit est aute ipsum exercitation. Labore id occaecat ad irure commodo ex. Nulla anim commodo officia Lorem incididunt consectetur. Enim occaecat nulla laboris culpa commodo ad. Excepteur duis nulla magna cillum enim qui dolor. Id cillum eiusmod adipisicing ut ullamco est nisi sit Lorem culpa. Amet occaecat amet mollit commodo aute qui velit deserunt quis labore aute.""",
+                          AppLocalizations.of(context)!
+                              .about_page_who_i_am_body,
                           style: GoogleFonts.inter(
                               color: const Color(0xff7B7E86),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w100),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300),
                           textAlign: TextAlign.justify,
                         ),
                       ],
@@ -106,7 +108,7 @@ class AboutViewLg extends StatelessWidget {
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.45,
               padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.05),
+                  horizontal: MediaQuery.of(context).size.width * 0.025),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   gradient: const LinearGradient(
@@ -119,32 +121,35 @@ class AboutViewLg extends StatelessWidget {
                 children: [
                   CustomDevCard(
                     icon: Icons.phone_android_rounded,
-                    title: 'Mobile Development',
-                    body:
-                        'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+                    title: AppLocalizations.of(context)!
+                        .about_page_mobile_dev_card,
+                    body: AppLocalizations.of(context)!
+                        .about_page_mobile_dev_card_body,
                     buttonText: 'See more',
-                    height: MediaQuery.of(context).size.height * 0.35,
-                    width: MediaQuery.of(context).size.width * 0.22,
+                    height: MediaQuery.of(context).size.height * 0.36,
+                    width: MediaQuery.of(context).size.width * 0.275,
                     delay: 100,
                   ),
                   CustomDevCard(
                     icon: Icons.web_asset_rounded,
-                    title: 'Web Development',
-                    body:
-                        'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+                    title:
+                        AppLocalizations.of(context)!.about_page_web_dev_card,
+                    body: AppLocalizations.of(context)!
+                        .about_page_web_dev_card_body,
                     buttonText: 'See more',
-                    height: MediaQuery.of(context).size.height * 0.35,
-                    width: MediaQuery.of(context).size.width * 0.22,
+                    height: MediaQuery.of(context).size.height * 0.36,
+                    width: MediaQuery.of(context).size.width * 0.275,
                     delay: 300,
                   ),
                   CustomDevCard(
                     icon: Icons.devices_other_rounded,
-                    title: 'Backend Development',
-                    body:
-                        'Occaecat id Lorem reprehenderit nulla aliqua ex tempor incididunt. Ea aliqua incididunt sint Lorem non sunt culpa nisi incididunt commodo.',
+                    title: AppLocalizations.of(context)!
+                        .about_page_backend_dev_card,
+                    body: AppLocalizations.of(context)!
+                        .about_page_backend_dev_card_body,
                     buttonText: 'See more',
-                    height: MediaQuery.of(context).size.height * 0.35,
-                    width: MediaQuery.of(context).size.width * 0.22,
+                    height: MediaQuery.of(context).size.height * 0.36,
+                    width: MediaQuery.of(context).size.width * 0.275,
                     delay: 600,
                   ),
                 ],

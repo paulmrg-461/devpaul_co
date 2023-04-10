@@ -28,7 +28,7 @@ class LocationViewMd extends StatelessWidget {
               AppLocalizations.of(context)!.home_page_menu_location,
               style: GoogleFonts.inter(
                   color: const Color(0xff232835),
-                  fontSize: 24,
+                  fontSize: 28,
                   fontWeight: FontWeight.w600),
             ),
           ),
@@ -38,8 +38,8 @@ class LocationViewMd extends StatelessWidget {
               AppLocalizations.of(context)!.location_page_location_text,
               style: GoogleFonts.inter(
                   color: const Color(0xff7B7E86),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w200),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w300),
               textAlign: TextAlign.justify,
             ),
           ),
@@ -62,7 +62,7 @@ class LocationViewMd extends StatelessWidget {
                   AppLocalizations.of(context)!.location_page_contact_us,
                   style: GoogleFonts.inter(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 24,
                       fontWeight: FontWeight.w500),
                 ),
                 const ContactItem(
@@ -80,9 +80,13 @@ class LocationViewMd extends StatelessWidget {
                     imagePath: 'assets/logos/location.svg',
                     semanticLabel: 'Location label',
                     text:
-                        'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo Casa F22',
+                        'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo  ',
                     url:
                         'https://www.google.com/maps/place/DevPaul/@2.4554602,-76.5940771,15z/data=!4m5!3m4!1s0x0:0x5dfe0cc97107e505!8m2!3d2.4554602!4d-76.5940771'),
+                const Divider(
+                  color: Colors.white60,
+                  thickness: 0.5,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

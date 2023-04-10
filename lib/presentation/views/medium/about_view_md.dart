@@ -27,7 +27,7 @@ class AboutViewMd extends StatelessWidget {
                 AppLocalizations.of(context)!.about_page_who_i_am,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 24,
+                    fontSize: 28,
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -37,11 +37,11 @@ class AboutViewMd extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Text(
-                """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ut proident sit velit nisi consequat sit cillum eiusmod magna esse adipisicing dolore. Ex sit est aute ipsum exercitation. Labore id occaecat ad irure commodo ex. Nulla anim commodo officia Lorem incididunt consectetur. Enim occaecat nulla laboris culpa commodo ad.""",
+                AppLocalizations.of(context)!.about_page_who_i_am_body,
                 style: GoogleFonts.inter(
                     color: const Color(0xff7B7E86),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w200),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300),
                 textAlign: TextAlign.justify,
               ),
             ),
@@ -52,7 +52,7 @@ class AboutViewMd extends StatelessWidget {
                 AppLocalizations.of(context)!.about_page_what_i_do,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 24,
+                    fontSize: 28,
                     fontWeight: FontWeight.w600),
               ),
             ),
@@ -60,8 +60,8 @@ class AboutViewMd extends StatelessWidget {
               height: size.height * 0.02,
             ),
             LocalDevCards(
-              width: size.width * 0.4,
-              height: size.height * 0.5,
+              width: size.width * 0.35,
+              height: size.height * 0.4,
             )
           ],
         ),

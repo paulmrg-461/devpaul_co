@@ -22,7 +22,7 @@ class LocationViewLg extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.4,
+            width: MediaQuery.of(context).size.width * 0.5,
             margin: const EdgeInsets.only(top: 10, bottom: 6),
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -42,11 +42,11 @@ class LocationViewLg extends StatelessWidget {
                     height: 18,
                   ),
                   Text(
-                    """Laborum ipsum pariatur fugiat occaecat quis est et non occaecat sit. Aliqua laboris velit labore ut irure. Ex nostrud ad aliqua enim anim est.""",
+                    AppLocalizations.of(context)!.location_page_location_text,
                     style: GoogleFonts.inter(
                         color: const Color(0xff7B7E86),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w200),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w300),
                     textAlign: TextAlign.justify,
                   ),
                 ],
@@ -358,7 +358,7 @@ class LocationViewLg extends StatelessWidget {
                               ),
                               CustomMenuItemFooter(
                                   text:
-                                      'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo Casa F22',
+                                      'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo  ',
                                   onPressed: () async {
                                     final Uri _url = Uri.parse(
                                         "https://www.google.com/maps/place/DevPaul/@2.4554602,-76.5940771,15z/data=!4m5!3m4!1s0x0:0x5dfe0cc97107e505!8m2!3d2.4554602!4d-76.5940771");

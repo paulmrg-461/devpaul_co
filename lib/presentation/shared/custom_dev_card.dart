@@ -30,13 +30,12 @@ class CustomDevCard extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
+        padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 26),
         decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.18),
             borderRadius: BorderRadius.circular(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
                 decoration: BoxDecoration(
@@ -53,18 +52,21 @@ class CustomDevCard extends StatelessWidget {
                         ),
                       ),
                     ]),
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(22),
                 child: Icon(
                   icon,
                   color: Colors.white,
-                  size: 42,
+                  size: 46,
                 )),
-            Text(
-              title,
-              style: GoogleFonts.inter(
-                  color: const Color(0xffF2F0F6),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Text(
+                title,
+                style: GoogleFonts.inter(
+                    color: const Color(0xffF2F0F6),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500),
+              ),
             ),
             Text(
               body,
@@ -74,6 +76,7 @@ class CustomDevCard extends StatelessWidget {
                   fontSize: 14,
                   fontWeight: FontWeight.w100),
             ),
+            const Spacer(),
             CustomButton(
               text: buttonText,
               onPressed: () => print('Hola Amiguis'),
