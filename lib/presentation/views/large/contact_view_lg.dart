@@ -149,7 +149,7 @@ class ContactViewLg extends StatelessWidget {
                               fontColor: const Color(0xff7B7E86),
                               borderColor: const Color(0xff2D69FD),
                               // expands: true,
-                              minLines: 4,
+                              minLines: 6,
                               maxLines: 16,
                             ),
                             CustomButton(

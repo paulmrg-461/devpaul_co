@@ -22,7 +22,7 @@ class AboutViewSm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am,
                 style: GoogleFonts.inter(
@@ -35,7 +35,7 @@ class AboutViewSm extends StatelessWidget {
               height: size.height * 0.015,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am_body,
                 overflow: TextOverflow.ellipsis,
@@ -49,7 +49,7 @@ class AboutViewSm extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
                 AppLocalizations.of(context)!.about_page_what_i_do,
                 style: GoogleFonts.inter(
@@ -62,8 +62,9 @@ class AboutViewSm extends StatelessWidget {
               height: size.height * 0.015,
             ),
             LocalDevCards(
-              width: size.width * 0.8,
-              height: size.height * 0.42,
+              width: size.width * 0.84,
+              height: size.height * 0.43,
+              margin: 20,
             )
           ],
         ),

@@ -16,7 +16,7 @@ class CollaboratorCard extends StatelessWidget {
     return InkWell(
       onTap: () async {
         final Uri url = Uri.parse(
-            "whatsapp://send?phone=${collaboratorEntity.phone}&text=Hola");
+            "whatsapp://send?phone=${collaboratorEntity.phone}&text=Hola ${collaboratorEntity.name}");
 
         if (!await launchUrl(url)) {
           throw 'Could not launch $url';

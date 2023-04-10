@@ -8,12 +8,15 @@ class CustomMobileDevCard extends StatelessWidget {
   final DevCardEntity devCardEntity;
   final double width;
   final double height;
-  const CustomMobileDevCard({
-    Key? key,
-    required this.devCardEntity,
-    required this.width,
-    required this.height,
-  }) : super(key: key);
+
+  final double? margin;
+  const CustomMobileDevCard(
+      {Key? key,
+      required this.devCardEntity,
+      required this.width,
+      required this.height,
+      this.margin = 28})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class CustomMobileDevCard extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        margin: const EdgeInsets.only(right: 28),
+        margin: EdgeInsets.only(right: margin!),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 18),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),

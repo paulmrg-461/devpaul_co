@@ -6,7 +6,8 @@ import 'package:devpaul_co/domain/entities/dev_card_entity.dart';
 class LocalDevCards extends StatelessWidget {
   final double? width;
   final double? height;
-  const LocalDevCards({super.key, this.width, this.height});
+  final double? margin;
+  const LocalDevCards({super.key, this.width, this.height, this.margin = 28});
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +41,13 @@ class LocalDevCards extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       physics: const BouncingScrollPhysics(),
       child: Row(children: [
-        const SizedBox(
-          width: 28,
+        SizedBox(
+          width: margin,
         ),
         ...localDevCards
             .map((devCard) => CustomMobileDevCard(
                 devCardEntity: devCard,
+                margin: margin,
                 width: width ?? size.width * 0.6,
                 height: height ?? size.height * 0.4))
             .toList(),
