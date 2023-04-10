@@ -22,7 +22,7 @@ class CollaboratorCard extends StatelessWidget {
           throw 'Could not launch $url';
         }
       },
-      child: FadeInLeft(
+      child: BounceInLeft(
         duration: const Duration(milliseconds: 2000),
         delay: Duration(milliseconds: collaboratorEntity.delay),
         child: Container(

@@ -63,7 +63,7 @@ class ContactViewLg extends StatelessWidget {
                 ),
                 CollaboratorsListView(
                   collaborators: collaboratorsProvider.collaborators,
-                  width: size.width * 0.35,
+                  width: size.width * 0.285,
                 ),
               ],
             ),

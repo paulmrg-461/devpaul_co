@@ -152,6 +152,19 @@ class LocationViewLg extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.0285,
                             height: MediaQuery.of(context).size.width * 0.0285,
                           ),
+                          CustomIconUrl(
+                            path: 'assets/logos/instagram.svg',
+                            onPressed: () async {
+                              final Uri _url = Uri.parse(
+                                  'https://www.instagram.com/devpaul_co/');
+                              if (!await launchUrl(_url)) {
+                                throw 'Could not launch $_url';
+                              }
+                            },
+                            label: 'Instagram Logo',
+                            width: MediaQuery.of(context).size.width * 0.0285,
+                            height: MediaQuery.of(context).size.width * 0.0285,
+                          ),
                         ],
                       )
                     ],
@@ -345,7 +358,7 @@ class LocationViewLg extends StatelessWidget {
                               ),
                               CustomMenuItemFooter(
                                   text:
-                                      'Popayán Cauca Colombia\nCll 22N #7-29 - B/Ciudad Jardín',
+                                      'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo Casa F22',
                                   onPressed: () async {
                                     final Uri _url = Uri.parse(
                                         "https://www.google.com/maps/place/DevPaul/@2.4554602,-76.5940771,15z/data=!4m5!3m4!1s0x0:0x5dfe0cc97107e505!8m2!3d2.4554602!4d-76.5940771");

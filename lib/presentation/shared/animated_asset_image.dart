@@ -19,7 +19,7 @@ class AnimatedAssetImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInLeft(
+    return BounceInLeft(
       duration: const Duration(milliseconds: 2000),
       from: 20,
       delay: Duration(milliseconds: techStackEntity.delay ?? 0),

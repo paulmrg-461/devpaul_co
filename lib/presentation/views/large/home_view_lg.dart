@@ -21,7 +21,6 @@ class HomeViewLg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
       color: Colors.white,
       child: Column(
         children: [
@@ -29,6 +28,7 @@ class HomeViewLg extends StatelessWidget {
             ClipPath(
               clipper: BackgroundHomeClippath(),
               child: Container(
+                margin: const EdgeInsets.all(16),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 22, vertical: 22),
                 decoration: BoxDecoration(
@@ -231,11 +231,8 @@ class HomeViewLg extends StatelessWidget {
             //     child: SizedBox(width: 225, child: DevPaulHorizontalLogo()))
           ]),
           Expanded(
-            child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.02),
-                child: TechStackListView(
-                    techStackList: techStackProvider.techStackList)),
+            child: TechStackListView(
+                techStackList: techStackProvider.techStackList),
           ),
         ],
       ),

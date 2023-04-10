@@ -26,4 +26,22 @@ List<Map<String, dynamic>> localCollaborators = [
     'phone': '+573214153856',
     'delay': 600
   },
+  {
+    'id': 4,
+    'name': 'Michael Pardo',
+    'imagePath': 'assets/images/michael.jpeg',
+    'email': 'pardo.burbano@gmail.com',
+    'profession': 'Software developer',
+    'phone': '+5732191152440',
+    'delay': 900
+  },
+  {
+    'id': 5,
+    'name': 'Andrés F. Bravo',
+    'imagePath': 'assets/images/andres.jpeg',
+    'email': 'afbravo.p5@gmail.com ',
+    'profession': 'Data scientist',
+    'phone': '+573014312013',
+    'delay': 1200
+  },
 ];
