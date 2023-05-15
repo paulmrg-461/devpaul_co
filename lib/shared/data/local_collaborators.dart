@@ -23,7 +23,7 @@ List<Map<String, dynamic>> localCollaborators = [
     'imagePath': 'assets/images/victor.jpg',
     'email': 'victorp2304.pro@gmail.com',
     'profession': 'Data scientist',
-    'phone': '+573214153856',
+    'phone': '+573182345621',
     'delay': 600
   },
   {
@@ -32,7 +32,7 @@ List<Map<String, dynamic>> localCollaborators = [
     'imagePath': 'assets/images/michael.jpeg',
     'email': 'pardo.burbano@gmail.com',
     'profession': 'Software developer',
-    'phone': '+5732191152440',
+    'phone': '+573219115240',
     'delay': 900
   },
   {
