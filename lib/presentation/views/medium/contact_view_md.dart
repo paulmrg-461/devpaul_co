@@ -21,10 +21,11 @@ String email = '';
 String cellphone = '';
 String message = '';
 
+final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
 class _ContactViewMdState extends State<ContactViewMd> {
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     final Size size = MediaQuery.of(context).size;
 
     return Container(
