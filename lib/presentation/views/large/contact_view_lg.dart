@@ -172,29 +172,35 @@ class ContactViewLg extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  width: 450,
-                  height: 450,
-                  padding: const EdgeInsets.all(60),
+                  width: MediaQuery.of(context).size.width * 0.24,
+                  height: MediaQuery.of(context).size.width * 0.24,
+                  margin: EdgeInsets.only(
+                      right: MediaQuery.of(context).size.width * 0.035),
                   decoration: BoxDecoration(
+                      color: const Color(0xff443357),
                       shape: BoxShape.circle,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xff443357), Color(0xff394053)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                      boxShadow: <BoxShadow>[
+                      boxShadow: [
                         BoxShadow(
-                          color: const Color(0xff443357).withAlpha(60),
-                          blurRadius: 12.0,
-                          spreadRadius: 7.0,
+                          color: const Color(0xff443357).withOpacity(0.5),
                           offset: const Offset(
                             10.0,
                             10.0,
                           ),
-                        ),
-                      ]),
-                  child: const DevPaulVerticalLogo(),
-                )
+                          blurRadius: 20.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                        const BoxShadow(
+                          color: Colors.white,
+                          offset: Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ), //BoxShadow
+                      ],
+                      border: Border.all(color: Color(0xff011D2B), width: 12),
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/logos/devpaul_logo.png'))),
+                ),
               ],
             ),
           ),

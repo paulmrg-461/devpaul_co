@@ -89,10 +89,10 @@ class LocationViewSm extends StatelessWidget {
                     CustomIconUrl(
                       path: 'assets/logos/facebook.svg',
                       onPressed: () async {
-                        final Uri _url =
+                        final Uri url =
                             Uri.parse('https://www.facebook.com/devpaul.co/');
-                        if (!await launchUrl(_url)) {
-                          throw 'Could not launch $_url';
+                        if (!await launchUrl(url)) {
+                          throw 'Could not launch $url';
                         }
                       },
                       label: 'Facebook Logo',
@@ -102,10 +102,10 @@ class LocationViewSm extends StatelessWidget {
                     CustomIconUrl(
                       path: 'assets/logos/twitter.svg',
                       onPressed: () async {
-                        final Uri _url =
+                        final Uri url =
                             Uri.parse('https://twitter.com/devpaul_co');
-                        if (!await launchUrl(_url)) {
-                          throw 'Could not launch $_url';
+                        if (!await launchUrl(url)) {
+                          throw 'Could not launch $url';
                         }
                       },
                       label: 'Twitter Logo',
@@ -115,10 +115,10 @@ class LocationViewSm extends StatelessWidget {
                     CustomIconUrl(
                       path: 'assets/logos/linkedin.svg',
                       onPressed: () async {
-                        final Uri _url = Uri.parse(
+                        final Uri url = Uri.parse(
                             'https://www.linkedin.com/in/paul-mauricio-realpe-guerrero-631b17a6/');
-                        if (!await launchUrl(_url)) {
-                          throw 'Could not launch $_url';
+                        if (!await launchUrl(url)) {
+                          throw 'Could not launch $url';
                         }
                       },
                       label: 'LinkedIn Logo',
@@ -128,10 +128,10 @@ class LocationViewSm extends StatelessWidget {
                     CustomIconUrl(
                       path: 'assets/logos/github.svg',
                       onPressed: () async {
-                        final Uri _url =
+                        final Uri url =
                             Uri.parse('https://github.com/paulmrg-461');
-                        if (!await launchUrl(_url)) {
-                          throw 'Could not launch $_url';
+                        if (!await launchUrl(url)) {
+                          throw 'Could not launch $url';
                         }
                       },
                       label: 'Github Logo',
@@ -141,10 +141,10 @@ class LocationViewSm extends StatelessWidget {
                     CustomIconUrl(
                       path: 'assets/logos/instagram.svg',
                       onPressed: () async {
-                        final Uri _url =
+                        final Uri url =
                             Uri.parse('https://www.instagram.com/devpaul_co/');
-                        if (!await launchUrl(_url)) {
-                          throw 'Could not launch $_url';
+                        if (!await launchUrl(url)) {
+                          throw 'Could not launch $url';
                         }
                       },
                       label: 'Instagram Logo',
@@ -192,9 +192,9 @@ class ContactItem extends StatelessWidget {
             text: text,
             fontSize: 14,
             onPressed: () async {
-              final Uri _url = Uri.parse(url);
-              if (!await launchUrl(_url)) {
-                throw 'Could not launch $_url';
+              final Uri uri = Uri.parse(url);
+              if (!await launchUrl(uri)) {
+                throw 'Could not launch $uri';
               }
             })
       ],

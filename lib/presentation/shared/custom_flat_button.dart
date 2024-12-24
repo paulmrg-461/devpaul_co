@@ -15,7 +15,7 @@ class CustomFlatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        style: TextButton.styleFrom(primary: color),
+        style: TextButton.styleFrom(foregroundColor: color),
         onPressed: () => onPressed(),
         child: Padding(
           padding: const EdgeInsets.all(10.0),

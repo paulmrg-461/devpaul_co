@@ -103,10 +103,10 @@ class LocationViewLg extends StatelessWidget {
                           CustomIconUrl(
                             path: 'assets/logos/facebook.svg',
                             onPressed: () async {
-                              final Uri _url = Uri.parse(
+                              final Uri url = Uri.parse(
                                   'https://www.facebook.com/devpaul.co/');
-                              if (!await launchUrl(_url)) {
-                                throw 'Could not launch $_url';
+                              if (!await launchUrl(url)) {
+                                throw 'Could not launch $url';
                               }
                             },
                             label: 'Facebook Logo',
@@ -116,10 +116,10 @@ class LocationViewLg extends StatelessWidget {
                           CustomIconUrl(
                             path: 'assets/logos/twitter.svg',
                             onPressed: () async {
-                              final Uri _url =
+                              final Uri url =
                                   Uri.parse('https://twitter.com/devpaul_co');
-                              if (!await launchUrl(_url)) {
-                                throw 'Could not launch $_url';
+                              if (!await launchUrl(url)) {
+                                throw 'Could not launch $url';
                               }
                             },
                             label: 'Twitter Logo',
@@ -129,10 +129,10 @@ class LocationViewLg extends StatelessWidget {
                           CustomIconUrl(
                             path: 'assets/logos/linkedin.svg',
                             onPressed: () async {
-                              final Uri _url = Uri.parse(
+                              final Uri url = Uri.parse(
                                   'https://www.linkedin.com/in/paul-mauricio-realpe-guerrero-631b17a6/');
-                              if (!await launchUrl(_url)) {
-                                throw 'Could not launch $_url';
+                              if (!await launchUrl(url)) {
+                                throw 'Could not launch $url';
                               }
                             },
                             label: 'LinkedIn Logo',
@@ -142,10 +142,10 @@ class LocationViewLg extends StatelessWidget {
                           CustomIconUrl(
                             path: 'assets/logos/github.svg',
                             onPressed: () async {
-                              final Uri _url =
+                              final Uri url =
                                   Uri.parse('https://github.com/paulmrg-461');
-                              if (!await launchUrl(_url)) {
-                                throw 'Could not launch $_url';
+                              if (!await launchUrl(url)) {
+                                throw 'Could not launch $url';
                               }
                             },
                             label: 'Github Logo',
@@ -155,10 +155,10 @@ class LocationViewLg extends StatelessWidget {
                           CustomIconUrl(
                             path: 'assets/logos/instagram.svg',
                             onPressed: () async {
-                              final Uri _url = Uri.parse(
+                              final Uri url = Uri.parse(
                                   'https://www.instagram.com/devpaul_co/');
-                              if (!await launchUrl(_url)) {
-                                throw 'Could not launch $_url';
+                              if (!await launchUrl(url)) {
+                                throw 'Could not launch $url';
                               }
                             },
                             label: 'Instagram Logo',
@@ -191,55 +191,55 @@ class LocationViewLg extends StatelessWidget {
                           CustomMenuItemFooter(
                               text: 'Flutter',
                               onPressed: () async {
-                                final Uri _url =
+                                final Uri url =
                                     Uri.parse('https://flutter.dev/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                           CustomMenuItemFooter(
                               text: 'React',
                               onPressed: () async {
-                                final Uri _url =
+                                final Uri url =
                                     Uri.parse('https://es.reactjs.org/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                           CustomMenuItemFooter(
                               text: 'Kotlin',
                               onPressed: () async {
-                                final Uri _url = Uri.parse(
+                                final Uri url = Uri.parse(
                                     'https://developer.android.com/kotlin/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                           CustomMenuItemFooter(
                               text: 'Swift',
                               onPressed: () async {
-                                final Uri _url = Uri.parse(
+                                final Uri url = Uri.parse(
                                     'https://www.apple.com/co/swift/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                           CustomMenuItemFooter(
                               text: 'Python',
                               onPressed: () async {
-                                final Uri _url =
+                                final Uri url =
                                     Uri.parse('https://www.python.org/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                           CustomMenuItemFooter(
                               text: 'Firebase',
                               onPressed: () async {
-                                final Uri _url =
+                                final Uri url =
                                     Uri.parse('https://firebase.google.com/');
-                                if (!await launchUrl(_url)) {
-                                  throw 'Could not launch $_url';
+                                if (!await launchUrl(url)) {
+                                  throw 'Could not launch $url';
                                 }
                               }),
                         ],
@@ -314,10 +314,10 @@ class LocationViewLg extends StatelessWidget {
                               CustomMenuItemFooter(
                                   text: 'co.devpaul@gmail.com',
                                   onPressed: () async {
-                                    final Uri _url = Uri.parse(
+                                    final Uri url = Uri.parse(
                                         'mailto:co.devpaul@gmail.com?subject=Contacto&body=Hola Paul, estoy interesado en...');
-                                    if (!await launchUrl(_url)) {
-                                      throw 'Could not launch $_url';
+                                    if (!await launchUrl(url)) {
+                                      throw 'Could not launch $url';
                                     }
                                   })
                             ],
@@ -336,11 +336,10 @@ class LocationViewLg extends StatelessWidget {
                               CustomMenuItemFooter(
                                   text: '+(57) 3148580454',
                                   onPressed: () async {
-                                    final Uri _url = Uri.parse(
+                                    final Uri url = Uri.parse(
                                         "https://web.whatsapp.com/send?phone=+573148580454&text=Hola");
-                                    ;
-                                    if (!await launchUrl(_url)) {
-                                      throw 'Could not launch $_url';
+                                    if (!await launchUrl(url)) {
+                                      throw 'Could not launch $url';
                                     }
                                   })
                             ],
@@ -360,11 +359,10 @@ class LocationViewLg extends StatelessWidget {
                                   text:
                                       'Popayán Cauca Colombia - Tv. 7 #51N-24\nClub residencial Camino Viejo  ',
                                   onPressed: () async {
-                                    final Uri _url = Uri.parse(
+                                    final Uri url = Uri.parse(
                                         "https://www.google.com/maps/place/DevPaul/@2.4554602,-76.5940771,15z/data=!4m5!3m4!1s0x0:0x5dfe0cc97107e505!8m2!3d2.4554602!4d-76.5940771");
-                                    ;
-                                    if (!await launchUrl(_url)) {
-                                      throw 'Could not launch $_url';
+                                    if (!await launchUrl(url)) {
+                                      throw 'Could not launch $url';
                                     }
                                   })
                             ],

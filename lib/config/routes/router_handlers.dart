@@ -15,6 +15,7 @@ final homeHandler = Handler(handlerFunc: (context, parameters) {
     pageProvider.createScrollController(page);
     return const HomePage();
   }
+  return null;
 });
 final privacyPolicyHandler =
     Handler(handlerFunc: (context, parameters) => const PrivacyPolicyScreen());

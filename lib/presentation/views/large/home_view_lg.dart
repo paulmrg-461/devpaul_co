@@ -124,11 +124,10 @@ class HomeViewLg extends StatelessWidget {
                                         internalHorizontalPadding: 8,
                                         icon: FontAwesomeIcons.whatsapp,
                                         onPressed: () async {
-                                          final Uri _url = Uri.parse(
+                                          final Uri url = Uri.parse(
                                               "https://web.whatsapp.com/send?phone=+573148580454&text=Hola");
-                                          ;
-                                          if (!await launchUrl(_url)) {
-                                            throw 'Could not launch $_url';
+                                          if (!await launchUrl(url)) {
+                                            throw 'Could not launch $url';
                                           }
                                         }),
                                   ],
@@ -169,7 +168,7 @@ class HomeViewLg extends StatelessWidget {
                           border: Border.all(color: Colors.white, width: 8),
                           image: const DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage('assets/images/paul.jpg'))),
+                              image: AssetImage('assets/images/capybara.png'))),
                     ),
                     Column(
                       children: [
@@ -178,10 +177,10 @@ class HomeViewLg extends StatelessWidget {
                           backgroundColor: Colors.transparent,
                           borderColor: Colors.white,
                           onPressed: () async {
-                            final Uri _url = Uri.parse(
+                            final Uri url = Uri.parse(
                                 'https://drive.google.com/file/d/1jAPgDvxwXu2IE-Gcje66cQ8SGfgz1lmf/view?usp=sharing');
-                            if (!await launchUrl(_url)) {
-                              throw 'Could not launch $_url';
+                            if (!await launchUrl(url)) {
+                              throw 'Could not launch $url';
                             }
                           },
                         )

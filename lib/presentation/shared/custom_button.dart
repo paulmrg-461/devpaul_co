@@ -39,12 +39,12 @@ class CustomButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(backgroundColor),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              backgroundColor: WidgetStateProperty.all(backgroundColor),
+              shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(borderRadius!),
                       side: BorderSide(color: borderColor!))),
-              elevation: MaterialStateProperty.all(buttonElevation)),
+              elevation: WidgetStateProperty.all(buttonElevation)),
           onPressed: onPressed,
           child: (icon == null)
               ? Padding(
