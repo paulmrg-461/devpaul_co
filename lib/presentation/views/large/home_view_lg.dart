@@ -109,7 +109,7 @@ class HomeViewLg extends StatelessWidget {
                                             const Color(0xff2D69FD),
                                         borderColor: const Color(0xff2D69FD),
                                         buttonElevation: 10,
-                                        internalVerticalPadding: 12,
+                                        internalVerticalPadding: 9,
                                         internalHorizontalPadding: 14,
                                         onPressed: () => pageProvider.goTo(1)),
                                     const SizedBox(
@@ -178,7 +178,7 @@ class HomeViewLg extends StatelessWidget {
                           borderColor: Colors.white,
                           onPressed: () async {
                             final Uri url = Uri.parse(
-                                'https://drive.google.com/file/d/1jAPgDvxwXu2IE-Gcje66cQ8SGfgz1lmf/view?usp=sharing');
+                                'https://drive.google.com/file/d/1YTczHPqlTrs0PFlIX3YQTuRgD4CmmPKr/view?usp=sharing');
                             if (!await launchUrl(url)) {
                               throw 'Could not launch $url';
                             }

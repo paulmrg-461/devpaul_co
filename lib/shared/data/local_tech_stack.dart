@@ -64,23 +64,44 @@ List<Map<String, dynamic>> localTechStackList = [
   },
   {
     'id': 10,
-    'name': 'Flask',
-    'imagePath': 'assets/images/flask.png',
-    'url': 'https://flask.palletsprojects.com/en/2.2.x/',
+    'name': 'FastAPI',
+    'imagePath': 'assets/images/fastapi.png',
+    'url': 'https://fastapi.tiangolo.com/',
     'delay': 900
   },
   {
     'id': 11,
-    'name': 'Asp.Net',
-    'imagePath': 'assets/images/aspnet.png',
-    'url': 'https://dotnet.microsoft.com/en-us/apps/aspnet',
+    'name': 'Flask',
+    'imagePath': 'assets/images/flask.png',
+    'url': 'https://flask.palletsprojects.com/en/2.2.x/',
     'delay': 1000
   },
   {
     'id': 12,
+    'name': 'Asp.Net',
+    'imagePath': 'assets/images/aspnet.png',
+    'url': 'https://dotnet.microsoft.com/en-us/apps/aspnet',
+    'delay': 1100
+  },
+  {
+    'id': 13,
     'name': 'Node',
     'imagePath': 'assets/images/node.png',
     'url': 'https://nodejs.org/es',
-    'delay': 1100
+    'delay': 1200
+  },
+  {
+    'id': 14,
+    'name': 'HuggingFace',
+    'imagePath': 'assets/images/huggingface.png',
+    'url': 'https://huggingface.co/',
+    'delay': 1300
+  },
+  {
+    'id': 15,
+    'name': 'OpenAI',
+    'imagePath': 'assets/images/openai.png',
+    'url': 'https://openai.com/',
+    'delay': 1400
   },
 ];

@@ -18,20 +18,5 @@ class TechStackListView extends StatelessWidget {
             .toList(),
       ),
     );
-
-    // return SizedBox(
-    //   height: 230,
-    //   child: ListView.builder(
-    //     shrinkWrap: true,
-    //     scrollDirection: Axis.horizontal,
-    //     itemCount: techStackList.length,
-    //     itemBuilder: (context, index) {
-    //       final TechStackEntity techStackEntity = techStackList[index];
-    //       return AnimatedAssetImage(
-    //         techStackEntity: techStackEntity,
-    //       );
-    //     },
-    //   ),
-    // );
   }
 }
