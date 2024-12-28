@@ -23,11 +23,12 @@ class AboutViewLg extends StatelessWidget {
           children: [
             Container(
               // width: MediaQuery.of(context).size.width * 0.8,
-              height: size.height * 0.27,
+              height: size.height * 0.267,
               // color: Colors.red,
               margin: EdgeInsets.symmetric(horizontal: size.width * 0.017),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   FadeInLeft(
                     child: Container(
@@ -54,8 +55,8 @@ class AboutViewLg extends StatelessWidget {
                               spreadRadius: 0.0,
                             ), //BoxShadow
                           ],
-                          border:
-                              Border.all(color: Color(0xff011D2B), width: 6),
+                          border: Border.all(
+                              color: const Color(0xff011D2B), width: 6),
                           image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage('assets/images/paul.jpg'))),
@@ -92,7 +93,7 @@ class AboutViewLg extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
+              height: MediaQuery.of(context).size.height * 0.05,
             ),
             Container(
               width: double.infinity,

@@ -76,12 +76,12 @@ class _ContactViewLgState extends State<ContactViewLg> {
           children: [
             SizedBox(
               width: double.infinity,
-              height: size.height * 0.3,
+              height: size.height * 0.34,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 28),
+                    padding: EdgeInsets.only(left: size.width * 0.04, top: 26),
                     child: Text(
                       AppLocalizations.of(context)!
                           .contact_page_team_colaborators,
@@ -93,7 +93,7 @@ class _ContactViewLgState extends State<ContactViewLg> {
                   ),
                   Container(
                     width: size.width * 0.6,
-                    margin: const EdgeInsets.only(top: 10, bottom: 6, left: 28),
+                    margin: EdgeInsets.only(top: 10, left: size.width * 0.04),
                     child: Text(
                       AppLocalizations.of(context)!
                           .contact_page_team_colaborators_body,
@@ -105,19 +105,23 @@ class _ContactViewLgState extends State<ContactViewLg> {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
+                    padding: EdgeInsets.symmetric(vertical: 12),
                     child: Divider(),
                   ),
                   CollaboratorsListView(
                     collaborators: widget.collaboratorsProvider.collaborators,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: Divider(),
                   ),
                 ],
               ),
             ),
             Container(
               width: double.infinity,
-              height: size.height * 0.6,
-              margin: const EdgeInsets.symmetric(horizontal: 28),
+              height: size.height * 0.56,
+              margin: EdgeInsets.symmetric(horizontal: size.width * 0.04),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,

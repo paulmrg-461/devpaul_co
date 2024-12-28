@@ -2,17 +2,17 @@
 <html>
 <head>
   <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+    Si estás sirviendo tu aplicación web en una ruta diferente a la raíz, cambia el
+    valor de href a continuación para reflejar la ruta base desde la que estás sirviendo.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    La ruta proporcionada debe comenzar y terminar con una barra "/" para que
+    funcione correctamente.
 
-    For more details:
+    Para más detalles:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
+    Este es un marcador de posición para href base que será reemplazado por el valor de
+    el argumento `--base-href` proporcionado a `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
 
@@ -20,7 +20,7 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="DevPaul Landing Page - Paul Realpe, fullstack developer.">
 
-  <!-- iOS meta tags & icons -->
+  <!-- Meta tags e iconos para iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="devpaul_co">
@@ -31,20 +31,23 @@
 
   <title>DevPaul</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Carga de la API de Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPixsiLjaykXiZ3J14BbgWmJayEvF6dA"></script>
 
   <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
+    // El valor a continuación es inyectado por flutter build, no lo modifiques.
+    var serviceWorkerVersion = "{{flutter_service_worker_version}}";
   </script>
-  <!-- This script adds the flutter initialization JS code -->
+  
+  <!-- Este script agrega el código de inicialización de Flutter -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
   <script>
     window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
+      // Descargar main.dart.js
+      _flutter.loader.load({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
