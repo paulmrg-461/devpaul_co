@@ -46,7 +46,7 @@ class ContactViewLg extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
+                  width: MediaQuery.of(context).size.width * 0.6,
                   margin: const EdgeInsets.only(top: 10, bottom: 6, left: 28),
                   child: Text(
                     AppLocalizations.of(context)!
@@ -64,7 +64,6 @@ class ContactViewLg extends StatelessWidget {
                 ),
                 CollaboratorsListView(
                   collaborators: collaboratorsProvider.collaborators,
-                  width: size.width * 0.285,
                 ),
               ],
             ),
@@ -196,7 +195,8 @@ class ContactViewLg extends StatelessWidget {
                           spreadRadius: 0.0,
                         ), //BoxShadow
                       ],
-                      border: Border.all(color: Color(0xff011D2B), width: 12),
+                      border:
+                          Border.all(color: const Color(0xff011D2B), width: 12),
                       image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage('assets/logos/devpaul_logo.png'))),

@@ -159,7 +159,6 @@ class _ContactViewMdState extends State<ContactViewMd> {
               ),
               CollaboratorsListView(
                 collaborators: widget.collaboratorsProvider.collaborators,
-                width: size.width * 0.45,
               ),
             ],
           ),

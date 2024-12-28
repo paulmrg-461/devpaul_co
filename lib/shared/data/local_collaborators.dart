@@ -4,7 +4,7 @@ List<Map<String, dynamic>> localCollaborators = [
     'name': 'Jimmy Realpe',
     'imagePath': 'assets/images/jimmy.jpeg',
     'email': 'jimmyarg87@gmail.com',
-    'profession': 'Flutter developer',
+    'profession': 'Frontend developer',
     'phone': '+573125035306',
     'delay': 100
   },

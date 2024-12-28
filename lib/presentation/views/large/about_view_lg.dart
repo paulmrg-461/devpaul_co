@@ -73,7 +73,7 @@ class AboutViewLg extends StatelessWidget {
                               fontSize: 26,
                               fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                         Text(
@@ -92,7 +92,7 @@ class AboutViewLg extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.028,
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
             Container(
               width: double.infinity,

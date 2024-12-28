@@ -30,16 +30,20 @@ class CollaboratorCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
           margin: const EdgeInsets.only(right: 16),
           decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xff2D69FD)),
-              borderRadius: BorderRadius.circular(10)),
+            color: Colors.white,
+            border: Border.all(color: const Color(0xff011D2B).withOpacity(0.4)),
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: Row(
             children: [
               Container(
-                width: 55,
-                height: 55,
-                margin: const EdgeInsets.only(right: 18),
+                width: 70,
+                height: 70,
+                margin: const EdgeInsets.only(right: 16),
                 decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: const Color(0xff011D2B),
+                    border:
+                        Border.all(color: const Color(0xff011D2B), width: 1.5),
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         fit: BoxFit.cover,
@@ -52,7 +56,7 @@ class CollaboratorCard extends StatelessWidget {
                     collaboratorEntity.name,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.inter(
-                        color: const Color(0xff232835),
+                        color: const Color(0xff011D2B),
                         fontSize: 18,
                         fontWeight: FontWeight.w600),
                   ),
@@ -71,7 +75,7 @@ class CollaboratorCard extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.email_outlined,
-                          size: 14,
+                          size: 15,
                           color: Color(0xff2D69FD),
                         ),
                         const SizedBox(
@@ -92,7 +96,7 @@ class CollaboratorCard extends StatelessWidget {
                     children: [
                       const Icon(
                         FontAwesomeIcons.whatsapp,
-                        size: 14,
+                        size: 15,
                         color: Color(0xff2D69FD),
                       ),
                       const SizedBox(
