@@ -32,18 +32,18 @@ class AboutViewSm extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: size.height * 0.0075,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am_body,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 17,
+                maxLines: 11,
                 style: GoogleFonts.inter(
                     color: const Color(0xff7B7E86),
                     fontSize: 14,
-                    letterSpacing: 0.075,
+                    letterSpacing: 0.05,
                     fontWeight: FontWeight.w200),
                 textAlign: TextAlign.justify,
               ),

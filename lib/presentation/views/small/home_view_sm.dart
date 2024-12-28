@@ -77,7 +77,7 @@ class HomeViewSm extends StatelessWidget {
                     onPressed: () => pageProvider.goTo(1),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 26, top: 8),
+                    padding: const EdgeInsets.only(bottom: 22, top: 6),
                     child: CustomButton(
                         text: AppLocalizations.of(context)!
                             .home_page_whatsapp_button,

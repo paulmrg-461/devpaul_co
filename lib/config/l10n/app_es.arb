@@ -26,5 +26,6 @@
     "contact_page_work_together": "Trabaja con Nosotros",
     "contact_page_work_together_body": "¿Te gustaría colaborar con nosotros? Contáctanos y con gusto discutiremos cómo podemos trabajar juntos.",
     "location_page_location_text": "Nuestra Ubicación: Tv.7 #51N-24 - Club Residencial Camino Viejo.",
-    "location_page_contact_us": "Contáctanos"
+    "location_page_contact_us": "Contáctanos",
+    "could_not_launch_email": "Ha ocurrido un error al enviar el mensaje"
 }
