@@ -11,16 +11,18 @@ class CustomDevCard extends StatelessWidget {
   final double width;
   final double height;
   final int delay;
-  const CustomDevCard(
-      {Key? key,
-      required this.icon,
-      required this.title,
-      required this.body,
-      required this.buttonText,
-      required this.width,
-      required this.height,
-      required this.delay})
-      : super(key: key);
+  final bool isFirst;
+  const CustomDevCard({
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.body,
+    required this.buttonText,
+    required this.width,
+    required this.height,
+    required this.delay,
+    this.isFirst = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class CustomDevCard extends StatelessWidget {
         width: width,
         height: height,
         padding: const EdgeInsets.symmetric(vertical: 26, horizontal: 26),
+        margin: EdgeInsets.only(left: isFirst ? 26 : 0, right: 26),
         decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.18),
             borderRadius: BorderRadius.circular(16)),
