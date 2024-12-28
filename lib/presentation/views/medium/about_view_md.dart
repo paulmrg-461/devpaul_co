@@ -14,54 +14,54 @@ class AboutViewMd extends StatelessWidget {
       // margin: const EdgeInsets.symmetric(vertical: 56, horizontal: 80),
       child: Padding(
         padding: EdgeInsets.only(
-          top: size.height * 0.14,
-          bottom: size.height * 0.05,
+          top: size.height * 0.1,
+          bottom: size.height * 0.025,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 26),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 28,
+                    fontSize: 26,
                     fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: size.height * 0.015,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 26),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am_body,
                 style: GoogleFonts.inter(
                     color: const Color(0xff7B7E86),
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w300),
                 textAlign: TextAlign.justify,
               ),
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28),
+              padding: const EdgeInsets.symmetric(horizontal: 26),
               child: Text(
                 AppLocalizations.of(context)!.about_page_what_i_do,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 28,
+                    fontSize: 26,
                     fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: size.height * 0.015,
             ),
             LocalDevCards(
-              width: size.width * 0.35,
-              height: size.height * 0.4,
+              width: 360,
+              height: size.height * 0.39,
             )
           ],
         ),
