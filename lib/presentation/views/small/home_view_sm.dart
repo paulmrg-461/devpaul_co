@@ -53,16 +53,16 @@ class HomeViewSm extends StatelessWidget {
                   Text(AppLocalizations.of(context)!.home_page_title_2,
                       style: getTextStyle()),
                   Text(AppLocalizations.of(context)!.home_page_title_3,
-                      style: getTextStyle(size: 28, weight: FontWeight.w400)),
+                      style: getTextStyle(size: 26, weight: FontWeight.w400)),
                   const SizedBox(
-                    height: 16,
+                    height: 14,
                   ),
                   Text(
                       AppLocalizations.of(context)!
                           .home_page_professional_profile,
                       style: getTextStyle(
                           color: const Color(0xffA6A6A6),
-                          size: 16,
+                          size: 15,
                           weight: FontWeight.w200)),
                   const Spacer(),
                   CustomButton(
@@ -71,9 +71,9 @@ class HomeViewSm extends StatelessWidget {
                     backgroundColor: const Color(0xff2D69FD),
                     borderColor: const Color(0xff2D69FD),
                     buttonElevation: 10,
-                    internalVerticalPadding: 14,
+                    internalVerticalPadding: 9,
                     internalHorizontalPadding: 12,
-                    width: size.width * 0.5,
+                    width: 240,
                     onPressed: () => pageProvider.goTo(1),
                   ),
                   Padding(
@@ -83,10 +83,10 @@ class HomeViewSm extends StatelessWidget {
                             .home_page_whatsapp_button,
                         backgroundColor: Colors.transparent,
                         borderColor: Colors.white,
-                        internalVerticalPadding: 11,
+                        internalVerticalPadding: 9,
                         internalHorizontalPadding: 12,
                         icon: FontAwesomeIcons.whatsapp,
-                        width: size.width * 0.5,
+                        width: 240,
                         onPressed: () async {
                           final Uri url = Uri.parse(
                               "whatsapp://send?phone=+573148580454&text=Hola");

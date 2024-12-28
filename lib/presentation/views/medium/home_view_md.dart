@@ -70,9 +70,9 @@ class HomeViewMd extends StatelessWidget {
                     backgroundColor: const Color(0xff2D69FD),
                     borderColor: const Color(0xff2D69FD),
                     buttonElevation: 10,
-                    internalVerticalPadding: 18,
+                    internalVerticalPadding: 12,
                     internalHorizontalPadding: 14,
-                    width: size.width * 0.35,
+                    width: 240,
                     onPressed: () => pageProvider.goTo(1),
                   ),
                   Padding(
@@ -82,10 +82,10 @@ class HomeViewMd extends StatelessWidget {
                             .home_page_whatsapp_button,
                         backgroundColor: Colors.transparent,
                         borderColor: Colors.white,
-                        internalVerticalPadding: 14,
+                        internalVerticalPadding: 12,
                         internalHorizontalPadding: 8,
                         icon: FontAwesomeIcons.whatsapp,
-                        width: size.width * 0.35,
+                        width: 240,
                         onPressed: () async {
                           final Uri url = Uri.parse(
                               "whatsapp://send?phone=+573148580454&text=Hola");

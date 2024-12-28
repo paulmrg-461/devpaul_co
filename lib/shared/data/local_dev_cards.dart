@@ -35,6 +35,14 @@ class LocalDevCards extends StatelessWidget {
           buttonText: 'See more',
           callback: () => print('Backend development'),
           delay: 600),
+      DevCardEntity(
+          icon: Icons.rocket_launch_rounded,
+          title: AppLocalizations.of(context)!.about_page_ai_chatbot_dev_card,
+          body:
+              AppLocalizations.of(context)!.about_page_ai_chatbot_dev_card_body,
+          buttonText: 'See more',
+          callback: () => print('AI chatbot development'),
+          delay: 900),
     ];
 
     return SingleChildScrollView(

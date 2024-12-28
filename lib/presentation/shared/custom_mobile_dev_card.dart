@@ -56,22 +56,22 @@ class CustomMobileDevCard extends StatelessWidget {
                             ),
                           ),
                         ]),
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(14),
                     child: Icon(
                       devCardEntity.icon,
                       color: Colors.white,
-                      size: 42,
+                      size: 40,
                     )),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 18),
+                    padding: const EdgeInsets.only(left: 14),
                     child: Text(
                       devCardEntity.title,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                       style: GoogleFonts.inter(
                           color: const Color(0xffF2F0F6),
-                          fontSize: 22,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
@@ -85,7 +85,7 @@ class CustomMobileDevCard extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.inter(
                     color: const Color(0xffF2F0F6),
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.w200),
               ),
             ),
@@ -95,7 +95,7 @@ class CustomMobileDevCard extends StatelessWidget {
               onPressed: devCardEntity.callback,
               backgroundColor: Colors.transparent,
               buttonElevation: 0,
-              internalVerticalPadding: 12,
+              internalVerticalPadding: 8,
               borderColor: Colors.white,
             )
           ],

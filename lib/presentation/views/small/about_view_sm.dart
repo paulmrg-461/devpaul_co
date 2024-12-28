@@ -14,57 +14,58 @@ class AboutViewSm extends StatelessWidget {
       // margin: const EdgeInsets.symmetric(vertical: 56, horizontal: 80),
       child: Padding(
         padding: EdgeInsets.only(
-          top: size.height * 0.11,
-          bottom: size.height * 0.065,
+          top: size.height * 0.1,
+          bottom: size.height * 0.06,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(
-              height: size.height * 0.015,
+              height: size.height * 0.01,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Text(
                 AppLocalizations.of(context)!.about_page_who_i_am_body,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 10,
+                maxLines: 17,
                 style: GoogleFonts.inter(
                     color: const Color(0xff7B7E86),
-                    fontSize: 16,
+                    fontSize: 14,
+                    letterSpacing: 0.075,
                     fontWeight: FontWeight.w200),
                 textAlign: TextAlign.justify,
               ),
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Text(
                 AppLocalizations.of(context)!.about_page_what_i_do,
                 style: GoogleFonts.inter(
                     color: const Color(0xff232835),
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(
-              height: size.height * 0.015,
+              height: size.height * 0.012,
             ),
             LocalDevCards(
-              width: size.width * 0.84,
+              width: 400,
               height: size.height * 0.43,
-              margin: 20,
+              margin: 16,
             )
           ],
         ),
