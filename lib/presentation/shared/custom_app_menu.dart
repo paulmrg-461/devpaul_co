@@ -1,8 +1,7 @@
-import 'package:devpaul_co/presentation/shared/dev_paul_horizontal_logo.dart';
+import 'package:devpaul_co/presentation/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:devpaul_co/presentation/shared/custom_menu_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 

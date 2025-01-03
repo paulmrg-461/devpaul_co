@@ -1,7 +1,7 @@
-import 'package:devpaul_co/domain/entities/dev_card_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:animate_do/animate_do.dart';
+import 'package:devpaul_co/domain/entities/dev_card_entity.dart';
 import 'package:devpaul_co/presentation/shared/custom_button.dart';
 
 class CustomMobileDevCard extends StatelessWidget {

@@ -1,12 +1,10 @@
-import 'package:devpaul_co/presentation/providers/page_provider.dart';
-import 'package:devpaul_co/presentation/providers/tech_stack_provider.dart';
-import 'package:devpaul_co/presentation/shared/custom_button.dart';
-import 'package:devpaul_co/presentation/shared/tech_stack_list_view.dart';
+import 'package:devpaul_co/presentation/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:devpaul_co/presentation/providers/providers.dart';
 
 class HomeViewSm extends StatelessWidget {
   final PageProvider pageProvider;

@@ -1,6 +1,5 @@
 import 'package:devpaul_co/domain/entities/tech_stack_entity.dart';
-import 'package:devpaul_co/presentation/shared/animated_asset_image.dart';
-import 'package:devpaul_co/presentation/shared/auto_scroll_listview.dart';
+import 'package:devpaul_co/presentation/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class TechStackListView extends StatelessWidget {

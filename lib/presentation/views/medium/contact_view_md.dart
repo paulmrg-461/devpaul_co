@@ -1,9 +1,7 @@
 // contact_view_md.dart
 import 'package:devpaul_co/core/validators/input_validators.dart';
 import 'package:devpaul_co/presentation/providers/collaborators_provider.dart';
-import 'package:devpaul_co/presentation/shared/collaborators_list_view.dart';
-import 'package:devpaul_co/presentation/shared/custom_button.dart';
-import 'package:devpaul_co/presentation/shared/custom_input.dart';
+import 'package:devpaul_co/presentation/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';

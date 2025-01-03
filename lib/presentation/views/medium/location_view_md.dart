@@ -1,12 +1,10 @@
+import 'package:devpaul_co/presentation/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:devpaul_co/presentation/providers/page_provider.dart';
-import 'package:devpaul_co/presentation/shared/custom_icon_url.dart';
-import 'package:devpaul_co/presentation/shared/custom_menu_item_footer.dart';
-import 'package:devpaul_co/presentation/shared/location_map.dart';
 
 class LocationViewMd extends StatelessWidget {
   final PageProvider pageProvider;
