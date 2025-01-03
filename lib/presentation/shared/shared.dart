@@ -17,3 +17,4 @@ export 'package:devpaul_co/presentation/shared/dev_paul_vertical_logo.dart';
 export 'package:devpaul_co/presentation/shared/team_colaborator_card.dart';
 export 'package:devpaul_co/presentation/shared/tech_stack_list_view.dart';
 export 'package:devpaul_co/presentation/shared/location_map.dart';
+export 'package:devpaul_co/presentation/shared/contact_form.dart';
