@@ -159,7 +159,8 @@ class _ContactViewLgState extends State<ContactViewLg> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomInput(
-                                  hintText: 'Full name',
+                                  hintText: AppLocalizations.of(context)!
+                                      .contact_page_form_fullname,
                                   controller: nameController,
                                   validator: (value) =>
                                       InputValidator.emptyValidator(
@@ -174,7 +175,8 @@ class _ContactViewLgState extends State<ContactViewLg> {
                                   enabledInputInteraction: true,
                                 ),
                                 CustomInput(
-                                  hintText: 'Email',
+                                  hintText: AppLocalizations.of(context)!
+                                      .contact_page_form_email,
                                   controller: emailController,
                                   validator: (value) =>
                                       InputValidator.emailValidator(value),
@@ -186,7 +188,8 @@ class _ContactViewLgState extends State<ContactViewLg> {
                                   enabledInputInteraction: true,
                                 ),
                                 CustomInput(
-                                  hintText: 'Phone',
+                                  hintText: AppLocalizations.of(context)!
+                                      .contact_page_form_phone,
                                   controller: cellphoneController,
                                   validator: (value) =>
                                       InputValidator.phoneValidator(value),
@@ -198,7 +201,8 @@ class _ContactViewLgState extends State<ContactViewLg> {
                                   enabledInputInteraction: true,
                                 ),
                                 CustomInput(
-                                  hintText: 'Message',
+                                  hintText: AppLocalizations.of(context)!
+                                      .contact_page_form_message,
                                   controller: messageController,
                                   validator: (value) =>
                                       InputValidator.emptyValidator(

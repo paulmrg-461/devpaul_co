@@ -107,7 +107,8 @@ class _ContactViewMdState extends State<ContactViewMd> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: CustomInput(
-                    hintText: 'Full name',
+                    hintText: AppLocalizations.of(context)!
+                        .contact_page_form_fullname,
                     controller: nameController,
                     validator: (value) =>
                         InputValidator.emptyValidator(value: value),
@@ -123,7 +124,8 @@ class _ContactViewMdState extends State<ContactViewMd> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: CustomInput(
-                    hintText: 'Email',
+                    hintText:
+                        AppLocalizations.of(context)!.contact_page_form_email,
                     controller: emailController,
                     validator: (value) => InputValidator.emailValidator(value),
                     textInputType: TextInputType.emailAddress,
@@ -137,7 +139,8 @@ class _ContactViewMdState extends State<ContactViewMd> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: CustomInput(
-                    hintText: 'Phone',
+                    hintText:
+                        AppLocalizations.of(context)!.contact_page_form_phone,
                     controller: cellphoneController,
                     validator: (value) => InputValidator.phoneValidator(value),
                     textInputType: TextInputType.phone,
@@ -151,7 +154,8 @@ class _ContactViewMdState extends State<ContactViewMd> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: CustomInput(
-                    hintText: 'Message',
+                    hintText:
+                        AppLocalizations.of(context)!.contact_page_form_message,
                     controller: messageController,
                     validator: (value) =>
                         InputValidator.emptyValidator(value: value),
