@@ -25,6 +25,10 @@
     "contact_page_team_colaborators_body": "Contamos con un equipo de profesionales altamente calificados en desarrollo de software y análisis de datos. Juntos, creamos soluciones innovadoras y de alto impacto.",
     "contact_page_work_together": "Trabaja con Nosotros",
     "contact_page_work_together_body": "¿Te gustaría colaborar con nosotros? Contáctanos y con gusto discutiremos cómo podemos trabajar juntos.",
+    "contact_page_form_fullname": "Nombre completo",
+    "contact_page_form_email": "Correo electrónico",
+    "contact_page_form_phone": "Teléfono",
+    "contact_page_form_message": "Mensaje",
     "location_page_location_text": "Nuestra Ubicación: Tv.7 #51N-24 - Club Residencial Camino Viejo.",
     "location_page_contact_us": "Contáctanos",
     "could_not_launch_email": "Ha ocurrido un error al enviar el mensaje"

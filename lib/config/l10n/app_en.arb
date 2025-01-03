@@ -25,6 +25,10 @@
     "contact_page_team_colaborators_body": "Our team is composed of highly qualified professionals specializing in software development and data analysis. Together, we create innovative and impactful solutions.",
     "contact_page_work_together": "Work With Us",
     "contact_page_work_together_body": "Interested in collaborating? Reach out to us, and we’ll be delighted to discuss how we can work together.",
+    "contact_page_form_fullname": "Full name",
+    "contact_page_form_email": "Email",
+    "contact_page_form_phone": "Phone",
+    "contact_page_form_message": "Message",
     "location_page_location_text": "Our Office Location: Tv.7 #51N-24 - Club Residencial Camino Viejo.",
     "location_page_contact_us": "Get in Touch",
     "could_not_launch_email": "Could not launch email"
